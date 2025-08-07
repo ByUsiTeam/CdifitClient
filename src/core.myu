@@ -1,0 +1,161 @@
+fn list(hurl,url2)
+
+//加载动画
+us(6,"visibility","visible")
+fr("@byusi/resources/Lottie/loading.json",data)
+fn Lottie.setImageLottie(7,data,-1,true)
+//主页列表加载
+t()
+{
+	f(sss.debug == true)
+	{
+		s cookie_data ="cloudreve-session=MTc1NDM5NzA1NnxOd3dBTkVoTlRUTldORVZGV0VaTFVVcFRTakpPVEVFMlJsVlhUVTgwTmtNeVF6VldUVnBZVlZCT1VsbERSMWhZVmxGQlJVdE9SRkU9fEzfWBOqxt8MyM2DvRBSgWWRnR9_SiR7a2ixwAFweDES"
+		hs(hurl,null,"utf-8",cookie_data,true,data)
+		fw("$System/homeList.json",data)
+	}
+	else
+	{
+		//现实实现代码
+		fdir("$",dir)
+		sj(dir,null,"/files",dir)
+		ss(dir+"/app_webview/Default/Cookies",file)
+		//数据库查询
+		sqlite(sss.sqlite,file)
+		s sqlx ="SELECT value FROM cookies;"
+		sql(sss.sqlite,sqlx,dsql)
+		sqlsele(dsql,"next",e)
+		w(e == true)
+		{
+			sqlsele(dsql,0,dss)
+			f(dss != null)
+			{
+				sqlite(sss.sqlite,"re")
+				s e =0
+			}
+			syso(dss)
+		}
+		ss("cloudreve-session="+dss,cookie_data)
+		hs(hurl,null,"utf-8",cookie_data,true,data)
+		fw("$System/homeList.json",data)
+	}
+	sss cookie_data =cookie_data
+	fr("$System/homeList.json",ldata)
+	json(ldata,data)
+	json(data,"get","code",code)
+	json(data,"get","data",ddata)
+	f(code == 0)
+	{
+		json(ddata,"list","objects",list)
+		json(list,"size",size)
+		s size_jsq =0
+		w(size_jsq &lt; size)
+		{
+			json(list,"data",size_jsq,item)
+			json(item,"get","id",id)
+			json(item,"get","name",name)
+			json(item,"get","path",path)
+			json(item,"get","size",size2)
+			json(item,"get","type",type)
+			f(type == "dir")
+			{
+				s icon ="@byusi/resources/icon/folder.png"
+			}
+			else f(type == "file")
+			{
+				slower(name,name2)
+				f(name2 *? ".mp3")
+				{
+					s icon ="@byusi/resources/icon/filetype-mp3.png"
+				}
+				else f(name2 *? ".mp4")
+				{
+					s icon ="@byusi/resources/icon/filetype-mp4.png"
+				}
+				else f(name2 *? ".py")
+				{
+					s icon ="@byusi/resources/icon/filetype-py.png"
+				}
+				else f(name2 *? ".xml")
+				{
+					s icon ="@byusi/resources/icon/filetype-xml.png"
+				}
+				else f(name2 *? ".yml")
+				{
+					s icon ="@byusi/resources/icon/filetype-yml.png"
+				}
+				else f(name2 *? ".jpg" || namw2 *? ".jpeg")
+				{
+					s icon ="@byusi/resources/icon/filetype-jpg.png"
+				}
+				else f(name2 *? ".md")
+				{
+					s icon ="@byusi/resources/icon/filetype-md.png"
+				}
+				else f(name2 *? ".html")
+				{
+					s icon ="@byusi/resources/icon/filetype-html.png"
+				}
+				else f(name2 *? ".gif")
+				{
+					s icon ="@byusi/resources/icon/filetype-gif.png"
+				}
+				else f(name2 *? ".exe")
+				{
+					s icon ="@byusi/resources/icon/filetype-exe.png"
+				}
+				else f(name2 *? ".css")
+				{
+					s icon ="@byusi/resources/icon/filetype-css.png"
+				}
+				else f(name2 *? ".pdf")
+				{
+					s icon ="@byusi/resources/icon/file-pdf.png"
+				}
+				else f(name2 *? ".flac" || name2 *? ".m4a")
+				{
+					s icon ="@byusi/resources/icon/music-note-beamed.png"
+				}
+                else f(name2 *? ".doc")
+                {
+                	s icon ="@byusi/resources/icon/filetype-doc.png"
+                }
+                else f(name2 *? ".docx")
+                {
+                	s icon ="@byusi/resources/icon/filetype-docx.png"
+                }
+				else
+				{
+					s icon ="@byusi/resources/icon/file-earmark.png"
+				}
+			}
+			ss(size_jsq + 1,size_jsq)
+			ula(uilist,5=name,6=id,10=icon,11=type,12=url2)
+		}
+		ufnsui()
+		{
+			us(6,"visibility","gone")
+			uls(4,uilist,"hlist.iyu",-2,-2)
+		}
+	}
+	else
+	{
+		json(jdata,"get","msg",msg)
+		ss(msg,tsc)
+		ufnsui()
+		{
+			fr("@byusi/resources/Lottie/error.json",data)
+			fn Lottie.setImageLottie(7,data,0,true)
+			us(8,"text","加载失败")
+			fn tw.tw2(tsc,1)
+		}
+	}
+}
+
+end fn
+
+fn uigo(iyu)
+
+uigo(iyu)
+call(null,"mjava","a.tz")
+
+end fn
