@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<title>CdifitClient</title>
+<icon>icon.png</icon>
+<packageName>miao.byusi.client.cdifit</packageName>
+<versionName>0.1.12</versionName>
+<versionint>12</versionint>
+<sdk>15</sdk>
+<yuv>3</yuv>
+
+<remark></remark>
+<Permissions>android.permission.READ_EXTERNAL_STORAGE
+android.permission.REQUEST_INSTALL_PACKAGES
+android.permission.INTERNET
+android.permission.WRITE_EXTERNAL_STORAGE</Permissions>
+<createTime>2025-08-01 12:08:01</createTime>
+<upTime>2025-08-01 12:08:01</upTime>

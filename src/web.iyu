@@ -1,0 +1,13 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="WebView">
+<ppt>width=-1
+height=-1</ppt>
+<event><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)</eventItme><eventItme type="ondownloadstart">hws(st_url)</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+fn Lottie.loaddex()
+uycl(sss.defaultTheme,true)</eventItme><eventItme type="loadingComplete">us(2,"url",sss.url)</eventItme></UIEventset>

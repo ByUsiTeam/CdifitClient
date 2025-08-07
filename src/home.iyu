@@ -1,0 +1,159 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+background=white</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="CardView">
+<ppt>width=-1
+height=65dp
+layout_marginLeft=8dp
+layout_marginRight=8dp
+layout_marginBottom=10dp
+layout_marginTop=6dp
+app_CardcornerRadius=10dp</ppt>
+<event></event>
+</View>
+<View id="9" did="3" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="14" did="10" type="ImageView">
+<ppt>width=48dp
+height=48dp
+src=17301567
+layout_marginLeft=8dp
+visibility=gone</ppt>
+<event><eventItme type="clicki">gvs(14,ss.view)
+cls(sss.lottiedex,"com.airbnb.lottie.LottieDrawable",ld)
+javax(d,ss.view,"android.widget.ImageView","getDrawable")
+cast(ld,d)
+javax(null,d,ld,"setMinAndMaxFrame","int", 1,"int", 360)</eventItme></event>
+</View>
+<View id="11" did="10" type="TextView">
+<ppt>width=-1
+height=-2
+text=Cdifit:RootFile:/
+textColor=#ff000000
+typeface=@byusi/resources/ttf/zt.TTF
+layout_marginLeft=6dp
+layout_marginRight=6dp
+singleLine=true
+ellipsize=middle
+textSize=16sp</ppt>
+<event></event>
+</View>
+<View id="12" did="10" type="TextView">
+<ppt>width=-2
+height=-2
+text=文本12</ppt>
+<event></event>
+</View>
+<View id="15" did="2" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="5" did="15" type="SwipeRefreshLayout">
+<ppt>width=-1
+height=-1
+background=through
+ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
+<event><eventItme type="onrefresh">us(st_vId,"refreshing","false")
+us(6,"background","through")
+us(8,"text","刷新中...")
+fn core.list("https://pan.byusi.cn/api/v3/directory/",ss.url2)</eventItme></event>
+</View>
+<View id="4" did="5" type="RecyclerView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="6" did="15" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+visibility=gone
+background=white</ppt>
+<event><eventItme type="clicki">syso("null")</eventItme></event>
+</View>
+<View id="7" did="6" type="ImageView">
+<ppt>width=240dp
+height=240dp
+src=17301567</ppt>
+<event></event>
+</View>
+<View id="8" did="6" type="TextView">
+<ppt>width=-2
+height=-2
+text=加载中...
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+gravity=center
+textSize=25sp</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">sss debug =false
+//
+ss url2 ="https://pan.byusi.cn/api/v3/directory/"
+//
+fn byusi.ztl()
+fn Lottie.loaddex()
+/.
+fr("@byusi/resources/Lottie/菜单开关.json",data)
+fn Lottie.setImageLottie(14,data,0,true)
+//
+gvs(14,ss.view)
+cls(sss.lottiedex,"com.airbnb.lottie.LottieDrawable",ld)
+javax(d,ss.view,"android.widget.ImageView","getDrawable")
+cast(ld,d)
+javax(null,d,ld,"setFrame","int", 1)
+//设定在200帧 
+javax(null,d,ld,"pauseAnimation")
+//暂停
+./
+uycl(sss.defaultTheme,true)</eventItme><eventItme type="loadingComplete">addv(1,"music.iyu")
+us(music.14,"visibility","gone")
+//一言支持
+t()
+{
+	hs("https://api.www.byusi.cn/yy/?form=json",url)
+    f(url != null)
+    {
+    	json(url,jurl)
+        json(jurl,"get","message",message)
+        ufnsui()
+        {
+        	utw(null,"一言",message,false,v)
+            {
+            }
+        }
+    }
+}
+//列表项加载
+fn core.list("https://pan.byusi.cn/api/v3/directory/",ss.url2)</eventItme><eventItme type="downkey">f(st_kC == 4)
+{
+	utw(null,"","确定退出 CdifitClient 软件吗？","确定","取消",true,v)
+	{
+		end()
+	}
+    else
+    {
+    	endutw()
+    }
+}</eventItme></UIEventset>

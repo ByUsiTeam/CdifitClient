@@ -1,0 +1,18 @@
+<View id="1" did="0" type="WebView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="0" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+visibility=gone</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+uycl(sss.defaultTheme,true)</eventItme><eventItme type="loadingComplete">fr("@byusi/html/graphPreview.html",html)
+sr(html,"[IMG]",sss.url,html_data)
+fw("$temp/graphPreview.html",html_data)
+us(1,"url","$temp/graphPreview.html")
+//us(2,"src",sss.url)</eventItme></UIEventset>

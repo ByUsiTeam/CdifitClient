@@ -1,0 +1,58 @@
+<View id="2" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="LinearLayout">
+<ppt>width=-1
+height=55dp
+orientation=horizontal
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="6" did="4" type="Button">
+<ppt>width=-2
+height=-2
+text=登录完成
+typeface=@byusi/resources/ttf/acbt80.ttf</ppt>
+<event></event>
+</View>
+<View id="7" did="4" type="TextView">
+<ppt>width=-2
+height=-2
+text=URL
+typeface=@byusi/resources/ttf/acbt80.ttf
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="1" did="3" type="WebView">
+<ppt>width=-1
+height=-1</ppt>
+<event><eventItme type="shouldoverrideurlloading">f(st_url == "https://pan.byusi.cn/login")
+{
+	us(st_vId,"url",st_url)
+}</eventItme><eventItme type="onpagefinished">/.
+us(7,"text",st_url)
+./
+ug(st_vId,"url",url)
+f(url ?* "https://pan.byusi.cn/home")
+{
+	fn tw.tw("登录成功")
+    end()
+}</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">fn  byusi.ztl()
+
+f(sss.url != null)
+{
+	us(1,"url",sss.url)
+}</eventItme><eventItme type="downkey">f(st_kC == 4)
+{
+	
+}</eventItme></UIEventset>

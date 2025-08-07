@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="https://api.www.byusi.cn/css/朱古力黑體.css" rel="stylesheet">
+	<title>图片预览器</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		
+		body, html {
+			height: 100%;
+			overflow: hidden;
+			background-color: #f5f5f5;
+			font-family: Arial, sans-serif;
+			touch-action: none;
+		}
+		
+		.preview-container {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.image-viewport {
+			position: relative;
+			width: 90%;
+			height: 70vh;
+			margin: 20px 0;
+			border: 1px solid #ddd;
+			background-color: #fff;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+			overflow: hidden;
+			touch-action: none;
+		}
+		
+		.image-wrapper {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			transition: transform 0.1s ease-out;
+		}
+		
+		.image-wrapper img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			transform-origin: center center;
+			transition: transform 0.1s ease-out;
+		}
+		
+		.controls {
+			display: flex;
+			gap: 15px;
+			margin-top: 20px;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		
+		button {
+			padding: 10px 15px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+			transition: background-color 0.3s;
+		}
+		
+		button:hover {
+			background-color: #45a049;
+		}
+		
+		button.reset {
+			background-color: #f44336;
+		}
+		
+		button.reset:hover {
+			background-color: #d32f2f;
+		}
+		
+		.loader {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 60px;
+			height: 60px;
+			border: 4px solid rgba(0, 0, 0, 0.1);
+			border-radius: 50%;
+			border-top: 4px solid rgba(0, 0, 0, 0.8);
+			animation: spin 1s linear infinite;
+			z-index: 100;
+			display: none;
+		}
+		
+		@keyframes spin {
+			0% { transform: translate(-50%, -50%) rotate(0deg); }
+			100% { transform: translate(-50%, -50%) rotate(360deg); }
+		}
+		
+		.image-info {
+			margin-top: 15px;
+			color: #666;
+			font-size: 14px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="preview-container">
+		<h1>图片预览器</h1>
+		<div class="image-info">支持旋转、自由缩放和拖动</div>
+		
+		<div class="image-viewport">
+			<div class="image-wrapper">
+				<img id="preview-image" src="[IMG]" alt="图片预览">
+			</div>
+		</div>
+		
+		<div class="controls">
+			<button id="rotate-left">向左旋转</button>
+			<button id="rotate-right">向右旋转</button>
+			<button id="zoom-in">放大</button>
+			<button id="zoom-out">缩小</button>
+			<button id="reset" class="reset">重置</button>
+		</div>
+	</div>
+	
+	<div class="loader"></div>
+	
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const image = document.getElementById('preview-image');
+			const imageWrapper = document.querySelector('.image-wrapper');
+			const viewport = document.querySelector('.image-viewport');
+			const loader = document.querySelector('.loader');
+			
+			let currentRotation = 0;
+			let currentScale = 1;
+			let currentX = 0;
+			let currentY = 0;
+			let isDragging = false;
+			let startX, startY;
+			let initialDistance = 0;
+			let initialScale = 1;
+			let initialX, initialY;
+			
+			// 显示加载指示器
+			loader.style.display = 'block';
+			
+			image.onload = function() {
+				setTimeout(function() {
+					loader.style.display = 'none';
+					resetImagePosition();
+				}, 500);
+			};
+			
+			if (image.complete) {
+				loader.style.display = 'none';
+				resetImagePosition();
+			}
+			
+			// 旋转控制
+			document.getElementById('rotate-left').addEventListener('click', function() {
+				currentRotation -= 90;
+				updateTransform();
+			});
+			
+			document.getElementById('rotate-right').addEventListener('click', function() {
+				currentRotation += 90;
+				updateTransform();
+			});
+			
+			// 缩放控制
+			document.getElementById('zoom-in').addEventListener('click', function() {
+				currentScale *= 1.2;
+				updateTransform();
+			});
+			
+			document.getElementById('zoom-out').addEventListener('click', function() {
+				currentScale /= 1.2;
+				updateTransform();
+			});
+			
+			// 重置
+			document.getElementById('reset').addEventListener('click', resetImagePosition);
+			
+			function resetImagePosition() {
+				currentRotation = 0;
+				currentScale = 1;
+				currentX = 0;
+				currentY = 0;
+				updateTransform();
+			}
+			
+			// 更新图片变换
+			function updateTransform() {
+				image.style.transform = `rotate(${currentRotation}deg) scale(${currentScale})`;
+				imageWrapper.style.transform = `translate(${currentX}px, ${currentY}px)`;
+			}
+			
+			// 手势缩放和拖动
+			viewport.addEventListener('touchstart', handleTouchStart);
+			viewport.addEventListener('touchmove', handleTouchMove);
+			viewport.addEventListener('touchend', handleTouchEnd);
+			viewport.addEventListener('mousedown', handleMouseDown);
+			document.addEventListener('mousemove', handleMouseMove);
+			document.addEventListener('mouseup', handleMouseUp);
+			
+			function handleTouchStart(e) {
+				if (e.touches.length === 1) {
+					isDragging = true;
+					startX = e.touches[0].clientX - currentX;
+					startY = e.touches[0].clientY - currentY;
+				} else if (e.touches.length === 2) {
+					e.preventDefault();
+					initialDistance = getDistance(e.touches[0], e.touches[1]);
+					initialScale = currentScale;
+					initialX = currentX;
+					initialY = currentY;
+				}
+			}
+			
+			function handleTouchMove(e) {
+				if (e.touches.length === 1 && isDragging) {
+					e.preventDefault();
+					currentX = e.touches[0].clientX - startX;
+					currentY = e.touches[0].clientY - startY;
+					updateTransform();
+				} else if (e.touches.length === 2) {
+					e.preventDefault();
+					const currentDistance = getDistance(e.touches[0], e.touches[1]);
+					const scale = initialScale * (currentDistance / initialDistance);
+					
+					// 计算缩放中心
+					const centerX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+					const centerY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+					
+					// 计算基于中心的缩放偏移
+					const scaleRatio = scale / currentScale;
+					currentX = centerX - (centerX - initialX) * scaleRatio;
+					currentY = centerY - (centerY - initialY) * scaleRatio;
+					
+					currentScale = scale;
+					updateTransform();
+				}
+			}
+			
+			function handleTouchEnd() {
+				isDragging = false;
+			}
+			
+			function handleMouseDown(e) {
+				isDragging = true;
+				startX = e.clientX - currentX;
+				startY = e.clientY - currentY;
+				e.preventDefault();
+			}
+			
+			function handleMouseMove(e) {
+				if (isDragging) {
+					currentX = e.clientX - startX;
+					currentY = e.clientY - startY;
+					updateTransform();
+				}
+			}
+			
+			function handleMouseUp() {
+				isDragging = false;
+			}
+			
+			function getDistance(touch1, touch2) {
+				const dx = touch1.clientX - touch2.clientX;
+				const dy = touch1.clientY - touch2.clientY;
+				return Math.sqrt(dx * dx + dy * dy);
+			}
+			
+			// 双击重置
+			viewport.addEventListener('dblclick', resetImagePosition);
+		});
+	</script>
+</body>
+</html>

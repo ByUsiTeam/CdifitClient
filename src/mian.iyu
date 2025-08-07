@@ -1,0 +1,127 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+background=white</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="RoundImageView">
+<ppt>width=-2
+height=-2
+src=@byusi/logo/cdifit.png</ppt>
+<event></event>
+</View>
+<View id="5" did="2" type="TextView">
+<ppt>width=-2
+height=-2
+text=开发测试版
+textColor=#ffff0000
+typeface=@byusi/resources/ttf/acbt80.ttf</ppt>
+<event></event>
+</View>
+<View id="4" did="2" type="ImageView">
+<ppt>width=66dp
+height=66dp
+src=17301567</ppt>
+<event><eventItme type="clicki">f(sss.cw == true)
+{
+	sss cw =false
+	fr("@byusi/resources/Lottie/loading.json",data)
+    fn Lottie.setImageLottie(5,data,-1,true)
+    sss system_url ="https://pan.byusi.cn/"
+    t()
+    {
+    	ss(sss.system_url+"api/v3/site/config",url)
+    	hs(url,json)
+        f(json != null)
+        {
+        	json(json,json)
+            fw("$ByUsi/Config.json",json)
+            json(json,"get","data",data)
+            json(data,"get","defaultTheme",defaultTheme)
+            sss defaultTheme =defaultTheme
+            syso(sss.defaultTheme)
+            json(data,"get","site_notice",site_notice)
+            ss("&lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'&gt;"+site_notice,ggao)
+            fw("$ByUsi/Cdifit/ggao.html",ggao)
+            ufnsui()
+            {
+            	uigo("home.iyu")
+                lan(0)
+                end()
+            }
+        }
+        else
+        {
+        	ufnsui()
+        	{
+    	    	fn tw.tw2("错误，未链接网络，点击错误图标可再次刷新",1)
+                sss cw =true
+                fr("@byusi/resources/Lottie/error.json",data)
+                fn Lottie.setImageLottie(5,data,0,true)
+            }
+        }
+    }
+    fd("$Temp/shb.Sl.txt",yz)
+}</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()</eventItme><eventItme type="loadingComplete">fn Lottie.loaddex()
+//
+fr("@byusi/resources/Lottie/loading.json",data)
+fn Lottie.setImageLottie(4,data,-1,true)
+fuzs("@VideoPlayer2.zip","$temp/VideoPlayer2",yz)
+sss system_url ="https://pan.byusi.cn/"
+t()
+{
+	ss(sss.system_url+"api/v3/site/config",url)
+	hs(url,json)
+    f(json != null)
+    {
+    	json(json,json)
+        fw("$ByUsi/Config.json",json)
+        json(json,"get","data",data)
+        json(data,"get","defaultTheme",defaultTheme)
+        sss defaultTheme =defaultTheme
+        syso(sss.defaultTheme)
+        json(data,"get","site_notice",site_notice)
+        ss("&lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'&gt;"+site_notice,ggao)
+        fw("$ByUsi/Cdifit/ggao.html",ggao)
+        ufnsui()
+        {
+        	fdir("$",dir)
+            sj(dir,null,"/files",dir)
+            ss(dir+"/app_webview/Default/Cookies",file)
+            fe(file,yzwj)
+            f(yzwj == true)
+            {
+            	fn core.uigo("home.iyu")
+                end()
+            }
+        	else
+        	{
+        		fn core.uigo("login.iyu")
+                end()
+        	}
+        }
+    }
+    else
+    {
+    	ufnsui()
+    	{
+    		fn tw.tw2("错误，未链接网络，点击错误图标可再次刷新",1)
+            sss cw =true
+            fr("@byusi/resources/Lottie/error.json",data)
+            fn Lottie.setImageLottie(5,data,0,true)
+        }
+    }
+}
+fd("$Temp/shb.Sl.txt",yz)</eventItme><eventItme type="downkey">f(st_kC == 4)
+{
+	
+}</eventItme></UIEventset>
