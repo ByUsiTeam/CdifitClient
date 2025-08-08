@@ -121,14 +121,13 @@ t()
 	}
 	else
 	{
-		json(jdata,"get","msg",msg)
-		ss(msg,tsc)
+		json(data,"get","msg",msg)
 		ufnsui()
 		{
 			fr("@byusi/resources/Lottie/error.json",data)
 			fn Lottie.setImageLottie(7,data,0,true)
 			us(8,"text","加载失败")
-			fn tw.tw2(tsc,1)
+			fn tw.tw2(msg,1)
 		}
 	}
 }
@@ -189,5 +188,12 @@ t()
         fw("$temp/clickAdvertisement",AdUrl)
     }
 }
+
+end fn
+
+fn addv(id)
+
+addv(id,"window.iyu")
+us(window.1,"visibility","gone")
 
 end fn

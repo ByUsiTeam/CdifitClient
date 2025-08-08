@@ -152,13 +152,16 @@ layout_marginLeft=6dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">fdir("$",dir)
-sj(dir,null,"/files",dir)
-ss(dir+"/app_webview/Default/Cookies",file)
+<event><eventItme type="clicki">fd("$System/Cookie",yz)
 //
-fd(file,yz)
-//
-fn core.uigo("login.iyu")
-end()</eventItme></event>
+f(yz == true)
+{
+	fn core.uigo("login.iyu")
+    end()
+}
+else
+{
+	fn tw.tw2("操作失败",1)
+}</eventItme></event>
 </View>
 <UIEventset></UIEventset>
