@@ -59,7 +59,8 @@ height=55dp
 app_CardcornerRadius=15dp
 app_CardcornerRadius=14dp
 layout_marginLeft=8dp
-layout_marginRight=8dp</ppt>
+layout_marginRight=8dp
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="13" did="12" type="TextInputLayout">
@@ -87,7 +88,8 @@ app_CardcornerRadius=15dp
 app_CardcornerRadius=14dp
 layout_marginLeft=8dp
 layout_marginRight=8dp
-layout_marginTop=12dp</ppt>
+layout_marginTop=12dp
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="16" did="15" type="TextInputLayout">
@@ -101,6 +103,34 @@ height=-1
 text=
 background=
 hint=请输入账号密码
+typeface=@byusi/resources/ttf/acbt80.ttf
+textColor=#ff000000
+gravity=center
+singleLine=true
+inputType=textpassword</ppt>
+<event></event>
+</View>
+<View id="32" did="11" type="CardView">
+<ppt>width=-1
+height=55dp
+app_CardcornerRadius=15dp
+app_CardcornerRadius=14dp
+layout_marginLeft=8dp
+layout_marginRight=8dp
+layout_marginTop=12dp</ppt>
+<event></event>
+</View>
+<View id="33" did="32" type="TextInputLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="34" did="33" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+background=
+hint=请输入Cookie
 typeface=@byusi/resources/ttf/acbt80.ttf
 textColor=#ff000000
 gravity=center
@@ -207,73 +237,35 @@ app_CardcornerRadius=25dp</ppt>
 <View id="20" did="19" type="Button">
 <ppt>width=-1
 height=-1
-text=登录
+text=写入保存Cookie
 typeface=@byusi/resources/ttf/acbt80.ttf
 textColor=#ffffffff
 gravity=center</ppt>
 <event><eventItme type="clicki">endkeyboard()
-ug(14,"text",mailbox)
-ug(17,"text",password)
-//ug(23,"text",yzm)
-//--====隔离线====--
-t()
+//
+ug(34,"text",cookie)
+//
+f(cookie != null && cookie != "")
 {
-    //数据拼接部分
-    fr("@byusi/resources/template/json/login_information.json",dddd)
-    sr(dddd,"[Email]",mailbox,dddd)
-    sr(dddd,"[Password]",password,dddd)
-    sr(dddd,"[VerificationCode]","",dddd)
-	//请求API
-    ufnsui()
-    {
-    	fn Lottie.loaddex()
-        us(29,"visibility","visible")
-        fr("@byusi/resources/Lottie/loading.json",data)
-        fn Lottie.setImageLottie(30,data,-1,true)
-    }
-	hs("https://api.www.byusi.cn/cdifit_client/login/",dddd,"utf-8",null,true,json_data)
-    f(json_data != null)
-    {
-    	stop(1500)
-    	ufnsui()
-    	{
-    		us(29,"visibility","gone")
-            fn tw.tw("登录成功")
-    	}
-        fw("$System/User.json",json_data)
-        ufnsui()
-        {
-        	uigo("home.iyu")
-            end()
-        }
-    }
-    else
-    {
-        ufnsui()
-        {
-        	fr("@byusi/resources/Lottie/error.json",data)
-            fn Lottie.setImageLottie(30,data,0,true)
-        }
-        stop(1500)
-        ufnsui()
-        {
-        	us(29,"visibility","gone")
-        }
-    }
-	syso(json_data)
+	fw("$System/Cookie",cookie)
+    fn core.uigo("home.iyu")
+    end()
+}
+else
+{
+	fn tw.tw2("请输入Cookie",1)
 }</eventItme></event>
 </View>
 <View id="31" did="18" type="TextView">
 <ppt>width=-2
 height=-2
-text=（必须）网页登录（获取cookie数据）
+text=获取Cookie教程
 textColor=#ff419aff
 typeface=@byusi/resources/ttf/acbt80.ttf
 gravity=center
 textSize=15sp
 layout_marginTop=10dp</ppt>
-<event><eventItme type="clicki">sss url ="https://pan.byusi.cn/login"
-uigo("web_login.iyu")</eventItme></event>
+<event><eventItme type="clicki">hws("https://forum.byusi.cn/archives/39.html")</eventItme></event>
 </View>
 <View id="29" did="3" type="LinearLayout">
 <ppt>width=-1

@@ -1,0 +1,164 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+background=#991d1e33</ppt>
+<event><eventItme type="clicki">syso("null")</eventItme></event>
+</View>
+<View id="2" did="1" type="CardView">
+<ppt>width=350dp
+height=-1
+layout_marginBottom=12dp
+app_CardcornerRadius=10dp
+layout_marginTop=12dp</ppt>
+<event></event>
+</View>
+<View id="7" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="3" did="7" type="LinearLayout">
+<ppt>width=-1
+height=55dp
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="CardView">
+<ppt>width=45dp
+height=45dp
+app_CardcornerRadius=6dp
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="5" did="4" type="ImageButton">
+<ppt>width=-1
+height=-1
+src=17301533
+background=through</ppt>
+<event><eventItme type="clicki">us(sidebar.1,"visibility","gone")</eventItme></event>
+</View>
+<View id="6" did="3" type="TextView">
+<ppt>width=-2
+height=-2
+text=别看了，这就是一个侧边栏
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+gravity=center
+textSize=15sp
+layout_marginLeft=8dp</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="9" did="8" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="17" did="10" type="CardView">
+<ppt>width=-1
+height=240dp
+layout_marginLeft=6dp
+layout_marginTop=6dp
+layout_marginRight=6dp
+layout_marginBottom=3dp
+app_CardcornerRadius=8dp
+app_CardElevation=6dp</ppt>
+<event></event>
+</View>
+<View id="19" did="17" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="18" did="19" type="WebView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="21" did="19" type="TextView">
+<ppt>width=-1
+height=-1
+text=ByUsiAds
+textColor=#ffff0000
+gravity=right|top
+typeface=@byusi/resources/ttf/acbt80.ttf
+layout_marginRight=4dp</ppt>
+<event></event>
+</View>
+<View id="20" did="19" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fr("$temp/clickAdvertisement",url)
+hws(url)</eventItme></event>
+</View>
+<View id="11" did="10" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginTop=6dp
+layout_marginLeft=6dp
+layout_marginRight=6dp
+layout_marginBottom=2dp
+app_CardcornerRadius=10dp
+app_CardElevation=6dp</ppt>
+<event></event>
+</View>
+<View id="12" did="11" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="13" did="12" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="14" did="13" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@byusi/resources/ApplicationUseIcon/ic_settings_privacy.png
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="15" did="13" type="TextView">
+<ppt>width=-2
+height=-2
+text=重新登录
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="16" did="12" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fdir("$",dir)
+sj(dir,null,"/files",dir)
+ss(dir+"/app_webview/Default/Cookies",file)
+//
+fd(file,yz)
+//
+fn core.uigo("login.iyu")
+end()</eventItme></event>
+</View>
+<UIEventset></UIEventset>

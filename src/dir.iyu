@@ -30,7 +30,7 @@ height=-1</ppt>
 height=-1
 orientation=horizontal
 gravity=left|center</ppt>
-<event></event>
+<event><eventItme type="clicki">us(sidebar.1,"visibility","visible")</eventItme></event>
 </View>
 <View id="11" did="10" type="TextView">
 <ppt>width=-1
@@ -92,6 +92,7 @@ textSize=25sp</ppt>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 fn Lottie.loaddex()
+fn core.adv(1)
 uycl(sss.defaultTheme,true)</eventItme><eventItme type="loadingComplete">addv(1,"music.iyu")
 us(music.14,"visibility","gone")
 ss url2 =sss.url2

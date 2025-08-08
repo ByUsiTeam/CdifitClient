@@ -16,25 +16,7 @@ t()
 	else
 	{
 		//现实实现代码
-		fdir("$",dir)
-		sj(dir,null,"/files",dir)
-		ss(dir+"/app_webview/Default/Cookies",file)
-		//数据库查询
-		sqlite(sss.sqlite,file)
-		s sqlx ="SELECT value FROM cookies;"
-		sql(sss.sqlite,sqlx,dsql)
-		sqlsele(dsql,"next",e)
-		w(e == true)
-		{
-			sqlsele(dsql,0,dss)
-			f(dss != null)
-			{
-				sqlite(sss.sqlite,"re")
-				s e =0
-			}
-			syso(dss)
-		}
-		ss("cloudreve-session="+dss,cookie_data)
+        fr("$System/Cookie",cookie_data)
 		hs(hurl,null,"utf-8",cookie_data,true,data)
 		fw("$System/homeList.json",data)
 	}
@@ -157,5 +139,55 @@ fn uigo(iyu)
 
 uigo(iyu)
 call(null,"mjava","a.tz")
+
+end fn
+
+fn adv(id)
+
+addv(id,"sidebar.iyu")
+fe("$System/Config/sidebar",Sidebar_Closed)
+fn core.ad()
+f(Sidebar_Closed == true)
+{
+	us(sidebar.1,"visibility","gone")
+}
+else
+{
+	fw("$System/Config/sidebar","")
+	utw(null,"","想要打开侧边栏，请点击上方的目录栏",false,v)
+	{
+	}
+}
+
+end fn
+
+fn ad()
+
+t()
+{
+	hs("https://api.www.byusi.cn/api/cdifitclient/ad.json",jsu)
+    json(jsu,jssu)
+    json(jssu,"get","exist",exist)
+    json(jssu,"get","picture",picture)
+    json(jssu,"get","AdUrl",AdUrl)
+    f(exist == false)
+    {
+    	ufnsui()
+    	{
+    		us(sidebar.17,"visibility","gone")
+    	}
+    }
+    else
+    {
+    	fr("@byusi/html/captcha.html",advhtml)
+        sr(advhtml,"[IMG]",picture,advhtml)
+        fw("$temp/ad.html",advhtml)
+        ufnsui()
+        {
+        	us(sidebar.18,"url","$temp/ad.html")
+        }
+        fw("$temp/clickAdvertisement",AdUrl)
+    }
+}
 
 end fn

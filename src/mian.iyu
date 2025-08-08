@@ -92,18 +92,18 @@ t()
         json(data,"get","site_notice",site_notice)
         ss("&lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'&gt;"+site_notice,ggao)
         fw("$ByUsi/Cdifit/ggao.html",ggao)
-        ufnsui()
+        fe("$System/Cookie",yzsql)
+        f(yzsql == true)
         {
-        	fdir("$",dir)
-            sj(dir,null,"/files",dir)
-            ss(dir+"/app_webview/Default/Cookies",file)
-            fe(file,yzwj)
-            f(yzwj == true)
-            {
-            	fn core.uigo("home.iyu")
+        	ufnsui()
+        	{
+        		fn core.uigo("home.iyu")
                 end()
-            }
-        	else
+        	}
+        }
+        else
+        {
+        	ufnsui()
         	{
         		fn core.uigo("login.iyu")
                 end()

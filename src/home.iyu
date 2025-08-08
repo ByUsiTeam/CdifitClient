@@ -30,7 +30,7 @@ height=-1</ppt>
 height=-1
 orientation=horizontal
 gravity=left|center</ppt>
-<event></event>
+<event><eventItme type="clicki">us(sidebar.1,"visibility","visible")</eventItme></event>
 </View>
 <View id="14" did="10" type="ImageView">
 <ppt>width=48dp
@@ -108,25 +108,19 @@ gravity=center
 textSize=25sp</ppt>
 <event></event>
 </View>
+<View id="16" did="1" type="DrawerLayout">
+<ppt>width=-1
+height=-1
+visibility=gone</ppt>
+<event></event>
+</View>
 <UIEventset><eventItme type="loading">sss debug =false
 //
 ss url2 ="https://pan.byusi.cn/api/v3/directory/"
 //
 fn byusi.ztl()
 fn Lottie.loaddex()
-/.
-fr("@byusi/resources/Lottie/菜单开关.json",data)
-fn Lottie.setImageLottie(14,data,0,true)
-//
-gvs(14,ss.view)
-cls(sss.lottiedex,"com.airbnb.lottie.LottieDrawable",ld)
-javax(d,ss.view,"android.widget.ImageView","getDrawable")
-cast(ld,d)
-javax(null,d,ld,"setFrame","int", 1)
-//设定在200帧 
-javax(null,d,ld,"pauseAnimation")
-//暂停
-./
+fn core.adv(1)
 uycl(sss.defaultTheme,true)</eventItme><eventItme type="loadingComplete">addv(1,"music.iyu")
 us(music.14,"visibility","gone")
 //一言支持
