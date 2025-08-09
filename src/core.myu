@@ -27,6 +27,12 @@ t()
 	json(data,"get","data",ddata)
 	f(code == 0)
 	{
+		json(ddata,"get","policy",policy)
+        json(policy,"get","name",Sname)
+        ufnsui()
+        {
+        	us(sidebar.27,"text",Sname)
+        }
 		json(ddata,"list","objects",list)
 		json(list,"size",size)
 		s size_jsq =0
@@ -141,6 +147,7 @@ call(null,"mjava","a.tz")
 
 end fn
 
+
 fn adv(id)
 
 addv(id,"sidebar.iyu")
@@ -195,5 +202,60 @@ fn addv(id)
 
 addv(id,"window.iyu")
 us(window.1,"visibility","gone")
+
+end fn
+
+//分享
+fn share(id,type)
+
+utw(null,"","请选择操作","删除","创建分享","确定",false,v)
+{
+	endutw()
+}
+else
+{
+	fr("@byusi/resources/template/json/share.json",json)
+    json(json,data)
+    json(data,"set","id",id)
+    f(type == "file")
+    {
+    	json(data,"set","is_dir","false")
+    }
+    else f(type == "dir")
+    {
+    	json(data,"set","is_dir","true")
+    }
+    t()
+    {
+    	fr("$System/Cookie",cookie)
+    	hs("https://pan.byusi.cn/api/v3/share",data,"utf-8",cookie,url)
+        json(url,udata)
+        json(udata,"get","code",code)
+        f(code == 0)
+        {
+        	json(udata,"get","data",fxurl)
+            ufnsui()
+            {
+            	utw(null,"","已创建分享链接："+fxurl,"确定","复制分享链接",false,v)
+            	{
+            		endutw()
+            	}
+                else
+                {
+                	sxb(fxurl)
+                    endutw()
+                }
+            }
+        }
+        else
+        {
+        	
+        }
+    }
+}
+else
+{
+	endutw()
+}
 
 end fn

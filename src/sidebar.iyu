@@ -56,6 +56,71 @@ height=-1
 orientation=vertical</ppt>
 <event></event>
 </View>
+<View id="23" did="8" type="CardView">
+<ppt>width=-1
+height=240dp
+app_CardcornerRadius=15dp
+app_CardElevation=10dp
+layout_marginLeft=6dp
+layout_marginTop=5dp
+layout_marginRight=6dp
+layout_marginBottom=4dp</ppt>
+<event></event>
+</View>
+<View id="24" did="23" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="25" did="24" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="28" did="25" type="CardView">
+<ppt>width=-1
+height=55dp</ppt>
+<event></event>
+</View>
+<View id="29" did="28" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="30" did="29" type="TextView">
+<ppt>width=-2
+height=-2
+text=默认存储策略
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="26" did="25" type="CardView">
+<ppt>width=-1
+height=55dp
+app_CardcornerRadius=15dp
+layout_marginLeft=6dp
+layout_marginTop=5dp
+layout_marginRight=6dp
+layout_marginBottom=4dp</ppt>
+<event></event>
+</View>
+<View id="27" did="26" type="TextView">
+<ppt>width=-1
+height=-1
+text=存储策略名（ID：27）
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+textSize=25sp
+gravity=center</ppt>
+<event></event>
+</View>
 <View id="9" did="8" type="ScrollView">
 <ppt>width=-1
 height=-1</ppt>
@@ -163,5 +228,52 @@ else
 {
 	fn tw.tw2("操作失败",1)
 }</eventItme></event>
+</View>
+<View id="31" did="10" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginTop=6dp
+layout_marginLeft=6dp
+layout_marginRight=6dp
+layout_marginBottom=4dp
+app_CardcornerRadius=10dp
+app_CardElevation=6dp</ppt>
+<event></event>
+</View>
+<View id="32" did="31" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="33" did="32" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="34" did="33" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@byusi/resources/ApplicationUseIcon/ic_settings_application_and_service.png
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="35" did="33" type="TextView">
+<ppt>width=-2
+height=-2
+text=查看全部可以存储策略
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="36" did="32" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn core.uigo("StoragePolicySettings.iyu")</eventItme></event>
 </View>
 <UIEventset></UIEventset>

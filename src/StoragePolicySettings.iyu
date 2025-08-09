@@ -1,0 +1,78 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+background=white</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="CardView">
+<ppt>width=-1
+height=55dp
+app_CardcornerRadius=15dp
+layout_marginTop=8dp</ppt>
+<event></event>
+</View>
+<View id="7" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="6" did="7" type="TextView">
+<ppt>width=-1
+height=-1
+text=查看可用存储策略
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+gravity=left|center
+textSize=20sp
+layout_marginLeft=10dp</ppt>
+<event></event>
+</View>
+<View id="5" did="2" type="SwipeRefreshLayout">
+<ppt>width=-1
+height=-1
+ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
+<event><eventItme type="onrefresh">us(st_vId,"refreshing","false")
+utw(null,"","抱歉不支持刷新",false,v)
+{
+}</eventItme></event>
+</View>
+<View id="4" did="5" type="RecyclerView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+uycl(sss.defaultTheme,true)</eventItme><eventItme type="loadingComplete">us(5,"refreshing","true")
+t()
+{
+	fr("$System/Cookie",cookie)
+	hs("https://pan.byusi.cn/api/v3/user/setting/policies",null,"utf-8",cookie,urldata)
+    json(urldata,jsondata)
+    json(jsondata,"get","code",code)
+    f(code == 0)
+    {
+    	json(jsondata,"list","data",data)
+        json(data,"size",size)
+        s size_jsq =0
+        w(size_jsq &lt; size)
+        {
+        	json(data,"data",size_jsq,item)
+            json(item,"get","name",name)
+            json(item,"get","id",id)
+            s(size_jsq + "1",size_jsq)
+            ula(list,4=name,6=id)
+        }
+        ufnsui()
+        {
+        	us(5,"refreshing","false")
+        	uls(4,list,"list.iyu",-2,-2)
+        }
+    }
+}</eventItme></UIEventset>
