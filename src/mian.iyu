@@ -71,7 +71,11 @@ src=17301567</ppt>
     fd("$Temp/shb.Sl.txt",yz)
 }</eventItme></event>
 </View>
-<UIEventset><eventItme type="loading">fn byusi.ztl()</eventItme><eventItme type="loadingComplete">fn Lottie.loaddex()
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@byusi/resources/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="loadingComplete">fn Lottie.loaddex()
 //
 fr("@byusi/resources/Lottie/loading.json",data)
 fn Lottie.setImageLottie(4,data,-1,true)
