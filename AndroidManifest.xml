@@ -2,15 +2,22 @@
 <title>CdifitClient</title>
 <icon>icon.png</icon>
 <packageName>miao.byusi.client.cdifit</packageName>
-<versionName>0.1.16</versionName>
-<versionint>16</versionint>
-<sdk>15</sdk>
+<versionName>0.1.21</versionName>
+<versionint>25</versionint>
+<sdk>26</sdk>
 <yuv>3</yuv>
 
 <remark></remark>
 <Permissions>android.permission.READ_EXTERNAL_STORAGE
 android.permission.REQUEST_INSTALL_PACKAGES
 android.permission.INTERNET
-android.permission.WRITE_EXTERNAL_STORAGE</Permissions>
+android.permission.WRITE_EXTERNAL_STORAGE
+android.permission.CAMERA
+android.permission.VIBRATE
+android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+android.hardware.camera
+android.hardware.camera2
+android.hardware.camera.autofocus
+android.permission.FLASHLIGHT</Permissions>
 <createTime>2025-08-01 12:08:01</createTime>
 <upTime>2025-08-01 12:08:01</upTime>

@@ -30,7 +30,15 @@ height=-1</ppt>
 height=-1
 orientation=horizontal
 gravity=left|center</ppt>
-<event><eventItme type="clicki">us(sidebar.1,"visibility","visible")</eventItme></event>
+<event><eventItme type="clicki">us(sidebar.1,"visibility","visible")
+swh("w",w)
+ss("-"+w,w)
+dht(dh,w,0,0,0)
+dh(dh,"duration",500)
+dha(dh2,false,true)
+dh(dh2,"duration",250)
+dhset(dhlist,false,dh,dh2)
+us(sidebar.1,"dh",dhlist)</eventItme></event>
 </View>
 <View id="14" did="10" type="ImageView">
 <ppt>width=48dp
@@ -76,7 +84,7 @@ ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
 <event><eventItme type="onrefresh">us(st_vId,"refreshing","false")
 us(6,"background","through")
 us(8,"text","刷新中...")
-fn core.list("https://pan.byusi.cn/api/v3/directory/",ss.url2)</eventItme></event>
+fn core.list("https://www.cdifit.cn/api/v3/directory/",ss.url2)</eventItme></event>
 </View>
 <View id="4" did="5" type="RecyclerView">
 <ppt>width=-1
@@ -115,33 +123,27 @@ visibility=gone</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loading">sss debug =false
+//sss is_cookies =0
 //
-ss url2 ="https://pan.byusi.cn/api/v3/directory/"
+ss url2 ="https://www.cdifit.cn/api/v3/directory/"
 //
 fn byusi.ztl()
 fn Lottie.loaddex()
 fn core.adv(1)
 fn core.addv(1)
-uycl(sss.defaultTheme,true)</eventItme><eventItme type="loadingComplete">addv(1,"music.iyu")
+uycl(sss.defaultTheme,true)
+//列表项加载
+fn core.list("https://www.cdifit.cn/api/v3/directory/",ss.url2)</eventItme><eventItme type="loadingComplete">addv(1,"music.iyu")
 us(music.14,"visibility","gone")
 //一言支持
 t()
 {
-	hs("https://api.www.byusi.cn/yy/?form=json",url)
-    f(url != null)
+	hs("https://api.www.cdifit.cn/yy/?form=text",url)
+    ufnsui()
     {
-    	json(url,jurl)
-        json(jurl,"get","message",message)
-        ufnsui()
-        {
-        	utw(null,"一言",message,false,v)
-            {
-            }
-        }
+    	fn xui.动态提示(1,"@tip.xml",url)
     }
-}
-//列表项加载
-fn core.list("https://pan.byusi.cn/api/v3/directory/",ss.url2)</eventItme><eventItme type="downkey">f(st_kC == 4)
+}</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
 	utw(null,"","确定退出 CdifitClient 软件吗？","确定","取消",true,v)
 	{

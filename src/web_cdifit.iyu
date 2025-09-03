@@ -1,0 +1,51 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="5" did="2" type="ProgressBar">
+<ppt>width=-1
+height=10dp
+max=100
+progress=0
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="WebView">
+<ppt>width=-1
+height=-1
+url=https://www.cdifit.cn</ppt>
+<event><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)</eventItme><eventItme type="onprogresschanged">f(st_nS != 100)
+{
+	us(5,"visibility","visible")
+    us(5,"progress",st_nS)
+}
+else
+{
+	us(5,"visibility","gone")
+}</eventItme><eventItme type="ondownloadstart">hws(st_url)</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+uycl(sss.defaultTheme,true)</eventItme><eventItme type="downkey">ug(3,"cangoback",fhy)
+f(fhy == true)
+{
+	us(3,"gobackorforward",-1)
+}
+else
+{
+	utw(null,"","已经无法返回了，是否退出该界面？","是","否",false,v)
+	{
+		end()
+	}
+    else
+    {
+    	endutw()
+    }
+}</eventItme></UIEventset>

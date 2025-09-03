@@ -30,7 +30,15 @@ height=-1</ppt>
 height=-1
 orientation=horizontal
 gravity=left|center</ppt>
-<event><eventItme type="clicki">us(sidebar.1,"visibility","visible")</eventItme></event>
+<event><eventItme type="clicki">us(sidebar.1,"visibility","visible")
+swh("w",w)
+ss("-"+w,w)
+dht(dh,w,0,0,0)
+dh(dh,"duration",500)
+dha(dh2,false,true)
+dh(dh2,"duration",250)
+dhset(dhlist,false,dh,dh2)
+us(sidebar.1,"dh",dhlist)</eventItme></event>
 </View>
 <View id="11" did="10" type="TextView">
 <ppt>width=-1
@@ -98,7 +106,7 @@ us(music.14,"visibility","gone")
 ss url2 =sss.url2
 fn core.list(ss.url2,ss.url2)
 //路径拼接
-sj(sss.url2,"https://pan.byusi.cn/api/v3/directory/",null,path)
+sj(sss.url2,"https://www.cdifit.cn/api/v3/directory/",null,path)
 sr(path,"/"," / ",path)
 ss("Cdifit:RootFile:/ "+path,pathText)
 us(11,"text",pathText)</eventItme></UIEventset>

@@ -37,7 +37,15 @@ layout_marginLeft=6dp</ppt>
 height=-1
 src=17301533
 background=through</ppt>
-<event><eventItme type="clicki">us(sidebar.1,"visibility","gone")</eventItme></event>
+<event><eventItme type="clicki">swh("w",w)
+ss("-"+w,w)
+dht(dh,0,w,0,0)
+dh(dh,"duration",500)
+dha(dh2,true,false)
+dh(dh2,"duration",250)
+dhset(dhlist,false,dh,dh2)
+us(sidebar.1,"dh",dhlist)
+us(sidebar.1,"visibility","gone")</eventItme></event>
 </View>
 <View id="6" did="3" type="TextView">
 <ppt>width=-2
@@ -50,7 +58,12 @@ textSize=15sp
 layout_marginLeft=8dp</ppt>
 <event></event>
 </View>
-<View id="8" did="7" type="LinearLayout">
+<View id="43" did="7" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="8" did="43" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=vertical</ppt>
@@ -131,6 +144,27 @@ height=-1</ppt>
 height=-1
 orientation=vertical
 gravity=center</ppt>
+<event></event>
+</View>
+<View id="52" did="10" type="TextView">
+<ppt>width=-2
+height=-2
+text=Cookies 二维码
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+textSize=18sp</ppt>
+<event></event>
+</View>
+<View id="51" did="10" type="CardView">
+<ppt>width=340dp
+height=340dp
+app_CardcornerRadius=16dp</ppt>
+<event></event>
+</View>
+<View id="50" did="51" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567</ppt>
 <event></event>
 </View>
 <View id="17" did="10" type="CardView">
@@ -217,7 +251,7 @@ layout_marginLeft=6dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">fd("$System/Cookie",yz)
+<event><eventItme type="clicki">fd("$System/Cookie.co",yz)
 //
 f(yz == true)
 {
@@ -275,5 +309,52 @@ height=-1
 text=
 background=through</ppt>
 <event><eventItme type="clicki">fn core.uigo("StoragePolicySettings.iyu")</eventItme></event>
+</View>
+<View id="37" did="10" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginTop=6dp
+layout_marginLeft=6dp
+layout_marginRight=6dp
+layout_marginBottom=4dp
+app_CardcornerRadius=10dp
+app_CardElevation=6dp</ppt>
+<event></event>
+</View>
+<View id="38" did="37" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="39" did="38" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="40" did="39" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@byusi/resources/ApplicationUseIcon/ic_settings_application_and_service.png
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="41" did="39" type="TextView">
+<ppt>width=-2
+height=-2
+text=Web使用Cdifit
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="42" did="38" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn core.uigo("web_cdifit.iyu")</eventItme></event>
 </View>
 <UIEventset></UIEventset>

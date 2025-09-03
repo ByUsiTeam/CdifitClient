@@ -103,7 +103,7 @@ f(type == "file")
     	{
     		f(rlc == false)
     		{
-    			hs("https://pan.byusi.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
+    			hs("https://www.cdifit.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
                 fw("$System/ResourceLinkCache/"+id,fhz)
     		}
             else
@@ -155,7 +155,7 @@ f(type == "file")
     	{
     		f(rlc == false)
     		{
-    			hs("https://pan.byusi.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
+    			hs("https://www.cdifit.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
                 fw("$System/ResourceLinkCache/"+id,fhz)
     		}
             else
@@ -206,7 +206,7 @@ f(type == "file")
     	{
     		f(rlc == false)
     		{
-    			hs("https://pan.byusi.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
+    			hs("https://www.cdifit.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
                 fw("$System/ResourceLinkCache/"+id,fhz)
     		}
             else
@@ -279,7 +279,7 @@ f(type == "file")
     	}
         t()
         {
-        	ss("https://pan.byusi.cn/api/v3/file/doc/"+id,url)
+        	ss("https://www.cdifit.cn/api/v3/file/doc/"+id,url)
         	hs(url,null,"utf-8",sss.cookie_data,data)
             json(data,jsdata)
             json(jsdata,"get","code",cddata)
@@ -319,7 +319,7 @@ f(type == "file")
     	{
     		f(rlc == false)
     		{
-    			hs("https://pan.byusi.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
+    			hs("https://www.cdifit.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
                 fw("$System/ResourceLinkCache/"+id,fhz)
     		}
             else

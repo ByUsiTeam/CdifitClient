@@ -33,8 +33,8 @@ src=17301567</ppt>
 {
 	sss cw =false
 	fr("@byusi/resources/Lottie/loading.json",data)
-    fn Lottie.setImageLottie(5,data,-1,true)
-    sss system_url ="https://pan.byusi.cn/"
+    fn Lottie.setImageLottie(4,data,-1,true)
+    sss system_url ="https://www.cdifit.cn/"
     t()
     {
     	ss(sss.system_url+"api/v3/site/config",url)
@@ -46,6 +46,7 @@ src=17301567</ppt>
             json(json,"get","data",data)
             json(data,"get","defaultTheme",defaultTheme)
             sss defaultTheme =defaultTheme
+            fw("$temp/defaultTheme",defaultTheme)
             syso(sss.defaultTheme)
             json(data,"get","site_notice",site_notice)
             ss("&lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'&gt;"+site_notice,ggao)
@@ -64,12 +65,41 @@ src=17301567</ppt>
     	    	fn tw.tw2("错误，未链接网络，点击错误图标可再次刷新",1)
                 sss cw =true
                 fr("@byusi/resources/Lottie/error.json",data)
-                fn Lottie.setImageLottie(5,data,0,true)
+                fn Lottie.setImageLottie(4,data,0,true)
             }
         }
     }
     fd("$Temp/shb.Sl.txt",yz)
 }</eventItme></event>
+</View>
+<View id="6" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=bottom</ppt>
+<event></event>
+</View>
+<View id="7" did="6" type="LinearLayout">
+<ppt>width=-1
+height=55dp
+orientation=horizontal
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="9" did="7" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@byusi/logo/byusi.png</ppt>
+<event></event>
+</View>
+<View id="10" did="7" type="TextView">
+<ppt>width=-2
+height=-2
+text=ByUsi软件
+textColor=#ff000000
+typeface=@byusi/resources/ttf/001hh1.ttf
+layout_marginLeft=6dp</ppt>
+<event></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 loadjar("typeface.de",dex)
@@ -80,7 +110,7 @@ javax(null,null,class,"set","android.app.Activity",activity,"String",path)</even
 fr("@byusi/resources/Lottie/loading.json",data)
 fn Lottie.setImageLottie(4,data,-1,true)
 fuzs("@VideoPlayer2.zip","$temp/VideoPlayer2",yz)
-sss system_url ="https://pan.byusi.cn/"
+sss system_url ="https://www.cdifit.cn/"
 t()
 {
 	ss(sss.system_url+"api/v3/site/config",url)
@@ -92,11 +122,11 @@ t()
         json(json,"get","data",data)
         json(data,"get","defaultTheme",defaultTheme)
         sss defaultTheme =defaultTheme
-        syso(sss.defaultTheme)
+        fw("$temp/defaultTheme",defaultTheme)
         json(data,"get","site_notice",site_notice)
         ss("&lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'&gt;"+site_notice,ggao)
         fw("$ByUsi/Cdifit/ggao.html",ggao)
-        fe("$System/Cookie",yzsql)
+        fe("$System/Cookie.co",yzsql)
         f(yzsql == true)
         {
         	ufnsui()
@@ -118,10 +148,10 @@ t()
     {
     	ufnsui()
     	{
+    		fr("@byusi/resources/Lottie/error.json",data)
+            fn Lottie.setImageLottie(4,data,0,true)
     		fn tw.tw2("错误，未链接网络，点击错误图标可再次刷新",1)
             sss cw =true
-            fr("@byusi/resources/Lottie/error.json",data)
-            fn Lottie.setImageLottie(5,data,0,true)
         }
     }
 }

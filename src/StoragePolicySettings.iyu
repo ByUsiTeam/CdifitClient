@@ -52,8 +52,9 @@ height=-1</ppt>
 uycl(sss.defaultTheme,true)</eventItme><eventItme type="loadingComplete">us(5,"refreshing","true")
 t()
 {
-	fr("$System/Cookie",cookie)
-	hs("https://pan.byusi.cn/api/v3/user/setting/policies",null,"utf-8",cookie,urldata)
+	fr("$System/Cookie.co",co)
+    call(cookie,"mjava","aes.decryptString",co,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+	hs("https://www.cdifit.cn/api/v3/user/setting/policies",null,"utf-8",cookie,urldata)
     json(urldata,jsondata)
     json(jsondata,"get","code",code)
     f(code == 0)

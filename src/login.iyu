@@ -195,7 +195,7 @@ text=
 background=through</ppt>
 <event><eventItme type="clicki">t()
 {
-	hs("https://pan.byusi.cn/api/v3/site/captcha",json)
+	hs("https://www.cdifit.cn/api/v3/site/captcha",json)
     json(json,json)
     json(json,"get","code",code)
     f(code == 0)
@@ -220,7 +220,7 @@ background=through</ppt>
 </View>
 <View id="18" did="11" type="LinearLayout">
 <ppt>width=-1
-height=95dp
+height=132dp
 orientation=vertical
 gravity=center
 layout_marginTop=12dp</ppt>
@@ -247,7 +247,8 @@ ug(34,"text",cookie)
 //
 f(cookie != null && cookie != "")
 {
-	fw("$System/Cookie",cookie)
+	call(nr,"mjava","aes.encryptString",cookie,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+	fw("$System/Cookie.co",nr)
     fn core.uigo("home.iyu")
     end()
 }
@@ -259,13 +260,32 @@ else
 <View id="31" did="18" type="TextView">
 <ppt>width=-2
 height=-2
-text=获取Cookie教程
+text=扫描其它 CdifitClient\ncookie 二维码登录
 textColor=#ff419aff
 typeface=@byusi/resources/ttf/acbt80.ttf
 gravity=center
 textSize=15sp
 layout_marginTop=10dp</ppt>
-<event><eventItme type="clicki">hws("https://forum.byusi.cn/archives/39.html")</eventItme></event>
+<event><eventItme type="clicki">uqr()</eventItme></event>
+</View>
+<View id="35" did="18" type="TextView">
+<ppt>width=-2
+height=-2
+text=安装 Via 浏览器\n以方便获取cookie
+textColor=#ff419aff
+typeface=@byusi/resources/ttf/acbt80.ttf
+gravity=center
+textSize=15sp
+layout_marginTop=10dp</ppt>
+<event><eventItme type="clicki">fc("@apk/via.apk","%CdifitClient/apk/via.apk",yz)
+f(yz == true)
+{
+	fo("%CdifitClient/apk/via.apk")
+}
+else
+{
+	fn tw.tw2("复制apk失败",1)
+}</eventItme></event>
 </View>
 <View id="29" did="3" type="LinearLayout">
 <ppt>width=-1
@@ -286,7 +306,7 @@ uycl(sss.defaultTheme,true)
 //--====隔离线====--
 t()
 {
-	hs("https://pan.byusi.cn/api/v3/site/captcha",json)
+	hs("https://www.cdifit.cn/api/v3/site/captcha",json)
     json(json,json)
     json(json,"get","code",code)
     f(code == 0)
@@ -310,4 +330,18 @@ t()
 }</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
 	
-}</eventItme><eventItme type="loadingComplete">us(20,"background",sss.defaultTheme)</eventItme></UIEventset>
+}</eventItme><eventItme type="loadingComplete">us(20,"background",sss.defaultTheme)</eventItme><eventItme type="onactivityresult">f(st_sC == 1102)
+{
+	git(st_iT,"extra","result",1_c)
+	f(1_c != null)
+	{
+		call(nr,"mjava","aes.encryptString",1_c,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+		fw("$System/cookie.co",nr)
+        fn core.uigo("home.iyu")
+        end()
+	}
+	else
+	{
+		fn tw.tw2("没有扫描到任何结果",1)
+	}
+}</eventItme></UIEventset>

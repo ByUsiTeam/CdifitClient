@@ -16,7 +16,9 @@ t()
 	else
 	{
 		//现实实现代码
-        fr("$System/Cookie",cookie_data)
+        fr("$System/Cookie.co",cookie_data_bak)
+        call(cookie_data,"mjava","aes.decryptString",cookie_data_bak,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+        //fr("$System/Cookie",cookie_data)
 		hs(hurl,null,"utf-8",cookie_data,true,data)
 		fw("$System/homeList.json",data)
 	}
@@ -153,12 +155,19 @@ fn adv(id)
 addv(id,"sidebar.iyu")
 fe("$System/Config/sidebar",Sidebar_Closed)
 fn core.ad()
+
+//二维码生成逻辑
+fn core.cookie_qr()
+
+//界面操作逻辑
 f(Sidebar_Closed == true)
 {
+    //隐藏界面
 	us(sidebar.1,"visibility","gone")
 }
 else
 {
+    //写入验证文件并显示提示
 	fw("$System/Config/sidebar","")
 	utw(null,"","想要打开侧边栏，请点击上方的目录栏",false,v)
 	{
@@ -171,7 +180,7 @@ fn ad()
 
 t()
 {
-	hs("https://api.www.byusi.cn/api/cdifitclient/ad.json",jsu)
+	hs("https://api.www.cdifit.cn/api/cdifitclient/ad.json",jsu)
     json(jsu,jssu)
     json(jssu,"get","exist",exist)
     json(jssu,"get","picture",picture)
@@ -227,8 +236,10 @@ else
     }
     t()
     {
-    	fr("$System/Cookie",cookie)
-    	hs("https://pan.byusi.cn/api/v3/share",data,"utf-8",cookie,url)
+    	fr("$System/Cookie.co",cookie_bak)
+        call(cookie,"mjava","aes.decryptString",cookie_bak,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+        //fr("$System/Cookie",cookie)
+    	hs("https://www.cdifit.cn/api/v3/share",data,"utf-8",cookie,url)
         json(url,udata)
         json(udata,"get","code",code)
         f(code == 0)
@@ -257,5 +268,17 @@ else
 {
 	endutw()
 }
+
+end fn
+
+fn cookie_qr()
+
+s dx ="2400"
+fdir("$System/Cookie.co",dir)
+fr(dir,data)
+call(nr,"mjava","aes.decryptString",data,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+uqr(nr,dx,qr)
+us(sidebar.50,"visibility","visible")
+us(sidebar.50,"src",qr)
 
 end fn
