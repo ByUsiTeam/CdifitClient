@@ -2,8 +2,8 @@
 <title>CdifitClient</title>
 <icon>icon.png</icon>
 <packageName>miao.byusi.client.cdifit</packageName>
-<versionName>0.1.21</versionName>
-<versionint>25</versionint>
+<versionName>0.1.24</versionName>
+<versionint>28</versionint>
 <sdk>26</sdk>
 <yuv>3</yuv>
 
@@ -20,4 +20,4 @@ android.hardware.camera2
 android.hardware.camera.autofocus
 android.permission.FLASHLIGHT</Permissions>
 <createTime>2025-08-01 12:08:01</createTime>
-<upTime>2025-08-01 12:08:01</upTime>
+<upTime>2025-08-01 12:08:01</upTime><manifest></manifest><application></application>

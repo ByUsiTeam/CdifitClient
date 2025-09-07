@@ -37,6 +37,20 @@ t()
         }
 		json(ddata,"list","objects",list)
 		json(list,"size",size)
+        f(size != 0)
+        {
+        	ufnsui()
+        	{
+        		us(20,"visibility","gone")
+        	}
+        }
+        else
+        {
+        	ufnsui()
+        	{
+        		us(20,"visibility","visible")
+        	}
+        }
 		s size_jsq =0
 		w(size_jsq &lt; size)
 		{
@@ -125,6 +139,7 @@ t()
 		{
 			us(6,"visibility","gone")
 			uls(4,uilist,"hlist.iyu",-2,-2)
+            us(17,"visibility","visible")
 		}
 	}
 	else

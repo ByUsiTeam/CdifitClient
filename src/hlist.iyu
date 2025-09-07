@@ -344,13 +344,18 @@ f(type == "file")
                 ufnsui()
                 {
                 	endutw()
-                	utw(null,"","该文件本客户端暂不支持预览\n是否下载该文件？","下载","取消",true,v)
+                	utw(null,"","该文件本客户端暂不支持预览\n是否下载该文件？","下载","取消","文本编辑器打开",true,v)
                 	{
                 		hws(url)
                 	}
                     else
                     {
                     	endutw()
+                    }
+                    else
+                    {
+                    	sss url_data =id
+                        fn core.uigo("editor.iyu")
                     }
                 }
             }

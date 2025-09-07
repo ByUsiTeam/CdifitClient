@@ -10,18 +10,9 @@ orientation=vertical
 gravity=center</ppt>
 <event></event>
 </View>
-<View id="5" did="2" type="ProgressBar">
-<ppt>width=-1
-height=10dp
-max=100
-progress=0
-visibility=gone</ppt>
-<event></event>
-</View>
 <View id="3" did="2" type="WebView">
 <ppt>width=-1
-height=-1
-url=https://www.cdifit.cn</ppt>
+height=-1</ppt>
 <event><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)</eventItme><eventItme type="onprogresschanged">f(st_nS != 100)
 {
 	us(5,"visibility","visible")
@@ -30,7 +21,22 @@ url=https://www.cdifit.cn</ppt>
 else
 {
 	us(5,"visibility","gone")
-}</eventItme><eventItme type="ondownloadstart">hws(st_url)</eventItme></event>
+}</eventItme><eventItme type="ondownloadstart">hws(st_url)</eventItme><eventItme type="onpagefinished">syso("URL加载完成，被加载URL："+st_url)</eventItme></event>
+</View>
+<View id="7" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top</ppt>
+<event></event>
+</View>
+<View id="5" did="7" type="ProgressBar">
+<ppt>width=-1
+height=10dp
+max=100
+progress=0
+visibility=gone</ppt>
+<event></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 uycl(sss.defaultTheme,true)</eventItme><eventItme type="downkey">ug(3,"cangoback",fhy)
@@ -48,4 +54,15 @@ else
     {
     	endutw()
     }
+}</eventItme><eventItme type="loadingComplete">f(sss.url != null)
+{
+	sj(sss.url,"Cdifit:RootFile:/",null,url)
+    sr(url," / ","/",url)
+    sr(url,"/ ","/",url)
+    ss("https://www.cdifit.cn/home?path=/"+url,url)
+	us(3,"url",url)
+}
+else
+{
+	fn tw.tw2("错误，无URL参数传入",1)
 }</eventItme></UIEventset>

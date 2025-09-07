@@ -1,0 +1,145 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+background=white</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="CardView">
+<ppt>width=-1
+height=65dp
+layout_marginLeft=8dp
+layout_marginRight=8dp
+layout_marginBottom=10dp
+layout_marginTop=6dp
+app_CardcornerRadius=10dp</ppt>
+<event></event>
+</View>
+<View id="9" did="3" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event><eventItme type="clicki">us(sidebar.1,"visibility","visible")
+swh("w",w)
+ss("-"+w,w)
+dht(dh,w,0,0,0)
+dh(dh,"duration",500)
+dha(dh2,false,true)
+dh(dh2,"duration",250)
+dhset(dhlist,false,dh,dh2)
+us(sidebar.1,"dh",dhlist)
+fn api.ban_scr()</eventItme></event>
+</View>
+<View id="11" did="10" type="TextView">
+<ppt>width=-1
+height=-2
+text=Cdifit:RootFile:/
+textColor=#ff000000
+typeface=@byusi/resources/ttf/zt.TTF
+layout_marginLeft=6dp
+layout_marginRight=6dp
+singleLine=true
+ellipsize=middle
+textSize=16sp</ppt>
+<event></event>
+</View>
+<View id="12" did="2" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="5" did="12" type="SwipeRefreshLayout">
+<ppt>width=-1
+height=-1
+background=through
+ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
+<event><eventItme type="onrefresh">us(st_vId,"refreshing","false")
+us(6,"background","through")
+us(8,"text","刷新中...")
+fn core.list(ss.url2,ss.url2)</eventItme></event>
+</View>
+<View id="4" did="5" type="RecyclerView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="6" did="12" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+visibility=gone
+background=white</ppt>
+<event><eventItme type="clicki">syso("null")</eventItme></event>
+</View>
+<View id="7" did="6" type="ImageView">
+<ppt>width=240dp
+height=240dp
+src=17301567</ppt>
+<event></event>
+</View>
+<View id="8" did="6" type="TextView">
+<ppt>width=-2
+height=-2
+text=加载中...
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+gravity=center
+textSize=25sp</ppt>
+<event></event>
+</View>
+<View id="17" did="12" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=bottom|right
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="18" did="17" type="CardView">
+<ppt>width=45dp
+height=45dp
+app_CardcornerRadius=12dp
+layout_marginRight=10dp
+layout_marginBottom=10dp
+app_CardElevation=6dp</ppt>
+<event></event>
+</View>
+<View id="19" did="18" type="ImageButton">
+<ppt>width=-1
+height=-1
+src=@byusi/resources/ApplicationUseIcon/ic_notification_hotspot.png
+background=through
+scaleType=centerinside</ppt>
+<event><eventItme type="clicki">fn tw.tw("请手动进行文件上传")
+ug(11,"text",path)
+sr(path,"Cdifit:RootFile:/","",path)
+sr(path," ","",path)
+ss("https://www.cdifit.cn/home?path=/"+path,url)
+sss url =url
+fn core.uigo("web_cdifit.iyu")</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+fn Lottie.loaddex()
+fn core.adv(1)
+fr("$temp/defaultTheme",defaultTheme)
+uycl(defaultTheme,true)</eventItme><eventItme type="loadingComplete">addv(1,"music.iyu")
+us(music.14,"visibility","gone")
+ss url2 =sss.url2
+fn core.list(ss.url2,ss.url2)
+//路径拼接
+sj(sss.url2,"https://www.cdifit.cn/api/v3/directory/",null,path)
+sr(path,"/"," / ",path)
+ss("Cdifit:RootFile:/ "+path,pathText)
+us(11,"text",pathText)</eventItme></UIEventset>

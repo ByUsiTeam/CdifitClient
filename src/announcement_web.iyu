@@ -1,0 +1,20 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="WebView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fr("$temp/defaultTheme",defaultTheme)
+uycl(defaultTheme,true)</eventItme><eventItme type="loadingComplete">us(3,"url",sss.url)
+fn api.ban_scr()</eventItme></UIEventset>

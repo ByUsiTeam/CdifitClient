@@ -122,7 +122,10 @@ t()
         json(json,"get","data",data)
         json(data,"get","defaultTheme",defaultTheme)
         sss defaultTheme =defaultTheme
-        fw("$temp/defaultTheme",defaultTheme)
+        f(defaultTheme != null)
+        {
+        	fw("$temp/defaultTheme",defaultTheme)
+        }
         json(data,"get","site_notice",site_notice)
         ss("&lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'&gt;"+site_notice,ggao)
         fw("$ByUsi/Cdifit/ggao.html",ggao)

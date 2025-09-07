@@ -38,7 +38,8 @@ dh(dh,"duration",500)
 dha(dh2,false,true)
 dh(dh2,"duration",250)
 dhset(dhlist,false,dh,dh2)
-us(sidebar.1,"dh",dhlist)</eventItme></event>
+us(sidebar.1,"dh",dhlist)
+fn api.ban_scr()</eventItme></event>
 </View>
 <View id="14" did="10" type="ImageView">
 <ppt>width=48dp
@@ -55,7 +56,7 @@ javax(null,d,ld,"setMinAndMaxFrame","int", 1,"int", 360)</eventItme></event>
 <View id="11" did="10" type="TextView">
 <ppt>width=-1
 height=-2
-text=Cdifit:RootFile:/
+text=Cdifit:RootFile:/ 
 textColor=#ff000000
 typeface=@byusi/resources/ttf/zt.TTF
 layout_marginLeft=6dp
@@ -91,6 +92,28 @@ fn core.list("https://www.cdifit.cn/api/v3/directory/",ss.url2)</eventItme></eve
 height=-1</ppt>
 <event></event>
 </View>
+<View id="20" did="15" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="21" did="20" type="ImageView">
+<ppt>width=-2
+height=-2
+src=@fail.xml</ppt>
+<event></event>
+</View>
+<View id="22" did="20" type="TextView">
+<ppt>width=-2
+height=-2
+text=该目录可能为空
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf</ppt>
+<event></event>
+</View>
 <View id="6" did="15" type="LinearLayout">
 <ppt>width=-1
 height=-1
@@ -116,6 +139,34 @@ gravity=center
 textSize=25sp</ppt>
 <event></event>
 </View>
+<View id="17" did="15" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=bottom|right
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="18" did="17" type="CardView">
+<ppt>width=45dp
+height=45dp
+app_CardcornerRadius=12dp
+layout_marginRight=10dp
+layout_marginBottom=10dp
+app_CardElevation=6dp</ppt>
+<event></event>
+</View>
+<View id="19" did="18" type="ImageButton">
+<ppt>width=-1
+height=-1
+src=@byusi/resources/ApplicationUseIcon/ic_notification_hotspot.png
+background=through
+scaleType=centerinside</ppt>
+<event><eventItme type="clicki">fn tw.tw("请手动进行文件上传")
+ug(11,"text",path)
+sss url =path
+fn core.uigo("web_cdifit.iyu")</eventItme></event>
+</View>
 <View id="16" did="1" type="DrawerLayout">
 <ppt>width=-1
 height=-1
@@ -131,7 +182,8 @@ fn byusi.ztl()
 fn Lottie.loaddex()
 fn core.adv(1)
 fn core.addv(1)
-uycl(sss.defaultTheme,true)
+fr("$temp/defaultTheme",defaultTheme)
+uycl(defaultTheme,true)
 //列表项加载
 fn core.list("https://www.cdifit.cn/api/v3/directory/",ss.url2)</eventItme><eventItme type="loadingComplete">addv(1,"music.iyu")
 us(music.14,"visibility","gone")
@@ -142,6 +194,21 @@ t()
     ufnsui()
     {
     	fn xui.动态提示(1,"@tip.xml",url)
+    }
+}
+
+fr("$ByUsi/Cdifit/ggao.html",ggqr_1)
+fr("$ByUsi/Cdifit/ggao.html.tmp",ggqr_2)
+f(ggqr_1 != ggqr_2)
+{
+	utw(null,"公告","announcement.iyu","确定","不在提示",false,v)
+	{
+		endutw()
+	}
+    else
+    {
+    	fw("$ByUsi/Cdifit/ggao.html.tmp",ggqr_1)
+        endutw()
     }
 }</eventItme><eventItme type="downkey">f(st_kC == 4)
 {

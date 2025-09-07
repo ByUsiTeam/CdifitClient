@@ -206,62 +206,52 @@ background=through</ppt>
 <event><eventItme type="clicki">fr("$temp/clickAdvertisement",url)
 hws(url)</eventItme></event>
 </View>
-<View id="11" did="10" type="CardView">
+<View id="53" did="10" type="CardView">
 <ppt>width=-1
 height=55dp
 layout_marginTop=6dp
 layout_marginLeft=6dp
 layout_marginRight=6dp
-layout_marginBottom=2dp
+layout_marginBottom=4dp
 app_CardcornerRadius=10dp
 app_CardElevation=6dp</ppt>
 <event></event>
 </View>
-<View id="12" did="11" type="RelativeLayout">
+<View id="54" did="53" type="RelativeLayout">
 <ppt>width=-1
 height=-1</ppt>
 <event></event>
 </View>
-<View id="13" did="12" type="LinearLayout">
+<View id="55" did="54" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=horizontal
 gravity=left|center</ppt>
 <event></event>
 </View>
-<View id="14" did="13" type="RoundImageView">
+<View id="56" did="55" type="RoundImageView">
 <ppt>width=45dp
 height=45dp
-src=@byusi/resources/ApplicationUseIcon/ic_settings_privacy.png
+src=@byusi/resources/ApplicationUseIcon/ic_settings_multi_device_collaboration_svg.png
 layout_marginLeft=6dp</ppt>
 <event></event>
 </View>
-<View id="15" did="13" type="TextView">
+<View id="57" did="55" type="TextView">
 <ppt>width=-2
 height=-2
-text=重新登录
+text=加入官方QQ群
 textColor=#ff000000
 typeface=@byusi/resources/ttf/acbt80.ttf
 textSize=15sp
 layout_marginLeft=6dp</ppt>
 <event></event>
 </View>
-<View id="16" did="12" type="Button">
+<View id="58" did="54" type="Button">
 <ppt>width=-1
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">fd("$System/Cookie.co",yz)
-//
-f(yz == true)
-{
-	fn core.uigo("login.iyu")
-    end()
-}
-else
-{
-	fn tw.tw2("操作失败",1)
-}</eventItme></event>
+<event><eventItme type="clicki">fn api.qq_group("822726278")</eventItme></event>
 </View>
 <View id="31" did="10" type="CardView">
 <ppt>width=-1
@@ -336,7 +326,7 @@ gravity=left|center</ppt>
 <View id="40" did="39" type="RoundImageView">
 <ppt>width=45dp
 height=45dp
-src=@byusi/resources/ApplicationUseIcon/ic_settings_application_and_service.png
+src=@byusi/resources/ApplicationUseIcon/ic_settings_storage.png
 layout_marginLeft=6dp</ppt>
 <event></event>
 </View>
@@ -355,6 +345,115 @@ layout_marginLeft=6dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">fn core.uigo("web_cdifit.iyu")</eventItme></event>
+<event><eventItme type="clicki">ug(11,"text",path)
+sss url =path
+fn core.uigo("web_cdifit.iyu")</eventItme></event>
+</View>
+<View id="59" did="10" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginTop=6dp
+layout_marginLeft=6dp
+layout_marginRight=6dp
+layout_marginBottom=2dp
+app_CardcornerRadius=10dp
+app_CardElevation=6dp
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="60" did="59" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="61" did="60" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="62" did="61" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@byusi/resources/AppreciationCode/mm_reward_qrcode_1757057444350.png
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="63" did="61" type="TextView">
+<ppt>width=-2
+height=-2
+text=赞赏我们
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="64" did="60" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fc("@byusi/resources/AppreciationCode/mm_reward_qrcode_1757057444350.png","$temp/Shared Code.PNG",yz)
+fdir("$temp/Shared Code.PNG",a)
+call(null,"mjava","share.codeFile",a,activity)</eventItme></event>
+</View>
+<View id="11" did="10" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginTop=6dp
+layout_marginLeft=6dp
+layout_marginRight=6dp
+layout_marginBottom=2dp
+app_CardcornerRadius=10dp
+app_CardElevation=6dp</ppt>
+<event></event>
+</View>
+<View id="12" did="11" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="13" did="12" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="14" did="13" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@byusi/resources/ApplicationUseIcon/ic_settings_privacy.png
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="15" did="13" type="TextView">
+<ppt>width=-2
+height=-2
+text=重新登录
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="16" did="12" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fd("$System/Cookie.co",yz)
+//
+f(yz == true)
+{
+	fn core.uigo("login.iyu")
+    end()
+}
+else
+{
+	fn tw.tw2("操作失败",1)
+}</eventItme></event>
 </View>
 <UIEventset></UIEventset>

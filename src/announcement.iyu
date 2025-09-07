@@ -1,0 +1,16 @@
+<View id="1" did="0" type="WebView">
+<ppt>width=-2
+height=-2
+url=$ByUsi/Cdifit/ggao.html</ppt>
+<event><eventItme type="shouldoverrideurlloading">f(st_url == "$ByUsi/Cdifit/ggao.html")
+{
+	us(st_vId,"url","$ByUsi/Cdifit/ggao.html")
+}
+else
+{
+	endutw()
+	sss url =st_url
+    fn core.uigo("announcement_web.iyu")
+}</eventItme></event>
+</View>
+<UIEventset></UIEventset>

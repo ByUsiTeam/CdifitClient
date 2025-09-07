@@ -56,14 +56,6 @@ public String md5st(String btInput) {
   
 }
 
-
-
-/**
-
-* AES加密， 输入字节组 和 一个自定义密钥。输出加密字符
-
-*/
-
 public String encrypt(byte[] st, String key)
 
 {
@@ -102,12 +94,6 @@ public String encrypt(byte[] st, String key)
   
 }
 
-/**
-
-* AES解密， 输入加密字符 和 一个自定义密钥。输出字节组
-
-*/
-
 public byte[] decrypt(String st, String key)
 
 {
@@ -145,12 +131,6 @@ public byte[] decrypt(String st, String key)
   return null;
   
 }
-
-/**
-
-* 获取文件字节组， 输入文件绝对路径。输出文件字节组
-
-*/
 
 public byte[] toFileByte(String file) {
   
@@ -216,14 +196,6 @@ public byte[] toFileByte(String file) {
   
 }
 
-/**
-
-* 写入字节组至文件。输入文件绝对路径 和 输入字节组， 输出是否成功
-
-*  注意， 这里的文件绝对路径 如果目录或文件夹会保存失败
-
-*/
-
 public boolean writebyteFile(String filename, byte[] b) {
   
   boolean s = true;
@@ -278,16 +250,6 @@ public boolean writebyteFile(String filename, byte[] b) {
   
 }
 
-
-
-
-
-/**
-
-* AES加密， 输入原字符串 和 一个自定义密钥。输出加密字符串
-
-*/
-
 public String encryptString(String st, String key)
 
 {
@@ -295,11 +257,6 @@ public String encryptString(String st, String key)
   return encrypt(st.getBytes(), md5st(key).substring(16));
   
 }
-/**
-
-* AES解密， 输入加密字符 和 一个自定义密钥。输出原字符串
-
-*/
 
 public String decryptString(String st, String key)
 
@@ -308,11 +265,6 @@ public String decryptString(String st, String key)
     return new String(decrypt(st, md5st(key).substring(16)));
   
 }
-/**
-
-* AES加密， 输入原字符串 和 一个自定义16位密钥。输出加密字符串
-
-*/
 
 public String encryptString16(String st, String key)
 
@@ -321,12 +273,6 @@ public String encryptString16(String st, String key)
   return encrypt(st.getBytes(), key);
   
 }
-
-/**
-
-* AES解密， 输入加密字符 和 一个自定义16位密钥。输出原字符串
-
-*/
 
 public String decryptString16(String st, String key)
 
@@ -338,14 +284,6 @@ public String decryptString16(String st, String key)
     return null;
   }
 }
-
-
-
-/**
-
-* AES加密，文件加密。 输入原文件路径 和 输入加密后文件路径 和 自定义密钥
-
-*/
 
 public boolean encryptFile(String file, String savefile, String key)
 
@@ -363,14 +301,6 @@ public boolean encryptFile(String file, String savefile, String key)
   
 }
 
-
-
-/**
-
-* AES解密，文件解密。 输入加密后文件路径 和 输入解密后文件路径 和 自定义密钥
-
-*/
-
 public boolean decryptFile(String file, String savefile, String key)
 
 {
@@ -387,12 +317,6 @@ public boolean decryptFile(String file, String savefile, String key)
   
 }
 
-/**
-
-* AES加密，文件加密。 输入原文件路径 和 输入加密后文件路径 和 自定义密钥
-
-*/
-
 public boolean encryptFile16(String file, String savefile, String key)
 
 {
@@ -408,14 +332,6 @@ public boolean encryptFile16(String file, String savefile, String key)
   return true;
   
 }
-
-
-
-/**
-
-* AES解密，文件解密。 输入加密后文件路径 和 输入解密后文件路径 和 自定义密钥
-
-*/
 
 public boolean decryptFile16(String file, String savefile, String key)
 
