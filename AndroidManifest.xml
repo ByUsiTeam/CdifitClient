@@ -2,8 +2,8 @@
 <title>CdifitClient</title>
 <icon>icon.png</icon>
 <packageName>miao.byusi.client.cdifit</packageName>
-<versionName>0.1.24</versionName>
-<versionint>28</versionint>
+<versionName>0.1.26</versionName>
+<versionint>30</versionint>
 <sdk>26</sdk>
 <yuv>3</yuv>
 

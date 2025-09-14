@@ -159,6 +159,6 @@ ss url2 =sss.url2
 fn core.list(ss.url2,ss.url2)
 //路径拼接
 sj(sss.url2,"https://www.cdifit.cn/api/v3/directory/",null,path)
-sr(path,"/"," / ",path)
-ss("Cdifit:RootFile:/ "+path,pathText)
+sr(path,"/","/",path)
+ss("Cdifit:RootFile:/"+path,pathText)
 us(11,"text",pathText)</eventItme></UIEventset>

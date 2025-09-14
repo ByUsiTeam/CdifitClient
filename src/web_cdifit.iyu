@@ -56,11 +56,18 @@ else
     }
 }</eventItme><eventItme type="loadingComplete">f(sss.url != null)
 {
-	sj(sss.url,"Cdifit:RootFile:/",null,url)
-    sr(url," / ","/",url)
-    sr(url,"/ ","/",url)
-    ss("https://www.cdifit.cn/home?path=/"+url,url)
-	us(3,"url",url)
+	f(sss.text == null)
+	{
+		sj(sss.url,"Cdifit:RootFile:/",null,url)
+        ss("https://www.cdifit.cn/home?path=/"+url,url)
+        us(3,"url",url)
+    }
+    else
+    {
+    	sj(sss.url,"Cdifit:RootFile:/",null,url)
+    	ss("https://www.cdifit.cn/text?p="+url+"&id="+sss.id,url)
+        us(3,"url",url)
+    }
 }
 else
 {

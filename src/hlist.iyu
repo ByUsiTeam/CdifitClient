@@ -355,7 +355,19 @@ f(type == "file")
                     else
                     {
                     	sss url_data =id
-                        fn core.uigo("editor.iyu")
+                        utw(null,"","请选择文件的代开方式","本地打开","web端代开",false,v)
+                        {
+                        	fn core.uigo("editor.iyu")
+                        }
+                        else
+                        {
+                        	ug(11,"text",dir)
+                            ss(dir+"/"+name,dir_original)
+                        	sss url =dir_original
+                            sss text =true
+                            sss id =id
+                            fn core.uigo("web_cdifit.iyu")
+                        }
                     }
                 }
             }
