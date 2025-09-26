@@ -14,14 +14,14 @@ ula(list, 1=null, 3=dirimg, 5="../上层文件夹", -1=true)
 fl(sss.oo, true, szdir)
 for(a; szdir)
 {
-ula(list, 1=null, 3=dirimg, 5=a, -1=true)
+	ula(list, 1=null, 3=dirimg, 5=a, -1=true)
 }
 
 //获取文件列表
 fl(sss.oo, false, szfile)
 for(a; szfile)
 {
-ula(list, 1=null, 3=fileimg, 5=a, -1=false)
+	ula(list, 1=null, 3=fileimg, 5=a, -1=false)
 }
 //设置列表控件
 gvs(sss.v,4,bb)

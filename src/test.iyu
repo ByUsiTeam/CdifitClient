@@ -30,7 +30,7 @@ sss oo = dir
 //显示选择文件
 sss ii = true
 
-fn a.a()
+fn selector.a()
 </eventItme></event>
 </View>
 <UIEventset></UIEventset>

@@ -25,7 +25,7 @@ f(name == "../上层文件夹")
       {
       	ssg(sss.oo, 0, fg, filename)
           sss oo = filename
-          fn a.a()
+          fn selector.a()
       }
   }
   else
@@ -37,7 +37,7 @@ else
 {
   ss(sss.oo + "/" + name, filename)
   sss oo = filename
-  fn a.a()
+  fn selector.a()
 }
 </eventItme></event>
 </View>
