@@ -7,6 +7,7 @@ fn Lottie.setImageLottie(7,data,-1,true)
 //主页列表加载
 t()
 {
+    ss("$Logs/"+sss.system_time+".log.byusi.txt",dir)
 	f(sss.debug == true)
 	{
 		s cookie_data ="cloudreve-session=MTc1NDM5NzA1NnxOd3dBTkVoTlRUTldORVZGV0VaTFVVcFRTakpPVEVFMlJsVlhUVTgwTmtNeVF6VldUVnBZVlZCT1VsbERSMWhZVmxGQlJVdE9SRkU9fEzfWBOqxt8MyM2DvRBSgWWRnR9_SiR7a2ixwAFweDES"
@@ -135,7 +136,15 @@ t()
 			ss(size_jsq + 1,size_jsq)
             sbp(icon,icon)
 			ula(uilist,5=name,6=id,10=icon,11=type,12=url2)
-            syso("\nName="+name+"\nId="+id+"\nIcon="+icon+"\nType="+type+"\nUrl2="+url2)
+            ss("Name → "+name+"\nId → "+id+"\nIcon → "+icon+"\nType → "+type+"\nUrl2 → "+url2+"\n",log_text)
+            syso(log_text)
+            fr(dir,origin)
+            ss(origin+"\n"+log_text,log_text)
+            sr(log_text,"null","/→/",log_text)
+            sr(log_text,"\n\n","@→@",log_text)
+            sr(log_text,"/→/\n","",log_text)
+            sr(log_text,"@→@","\n\n",log_text)
+            fw(dir,log_text)
 		}
 		ufnsui()
 		{
