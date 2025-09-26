@@ -2,7 +2,15 @@
 <ppt>width=-1
 height=-1
 background=#991d1e33</ppt>
-<event><eventItme type="clicki">syso("null")</eventItme></event>
+<event><eventItme type="clicki">swh("w",w)
+ss("-"+w,w)
+dht(dh,0,w,0,0)
+dh(dh,"duration",500)
+dha(dh2,true,false)
+dh(dh2,"duration",250)
+dhset(dhlist,false,dh,dh2)
+us(sidebar.1,"dh",dhlist)
+us(sidebar.1,"visibility","gone")</eventItme></event>
 </View>
 <View id="2" did="1" type="CardView">
 <ppt>width=350dp
