@@ -11,6 +11,6 @@ else
 	endutw()
 	sss url =st_url
     fn core.uigo("announcement_web.iyu")
-}</eventItme></event>
+}</eventItme><eventItme type="onreceivederror">us(st_vId,"url",st_url)</eventItme></event>
 </View>
 <UIEventset></UIEventset>
