@@ -133,7 +133,9 @@ t()
 				}
 			}
 			ss(size_jsq + 1,size_jsq)
+            sbp(icon,icon)
 			ula(uilist,5=name,6=id,10=icon,11=type,12=url2)
+            syso("\nName="+name+"\nId="+id+"\nIcon="+icon+"\nType="+type+"\nUrl2="+url2)
 		}
 		ufnsui()
 		{

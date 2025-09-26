@@ -1,0 +1,42 @@
+fn put(url,file,filet)
+
+javanew(url_obj,"java.net.URL","String",url)
+
+// 创建 OkHttpClient
+javanew(okhttp客户端,"com.android.okhttp.OkHttpClient")
+
+// 创建文件对象
+javanew(文件,"java.io.File", "String",file)
+java(文件类型, null, "com.android.okhttp.MediaType.parse", "String", filet)
+java(文件请求体, null, "com.android.okhttp.RequestBody.create", "com.android.okhttp.MediaType", 文件类型, "java.io.File", 文件)
+
+// 构建 Multipart 请求体
+javanew(请求体构建器, "com.android.okhttp.MultipartBuilder")
+java(请求类型, null, "com.android.okhttp.MediaType.parse", "String", "multipart/form-data")
+java(请求体构建器, 请求体构建器, "com.android.okhttp.MultipartBuilder.type", "com.android.okhttp.MediaType", 请求类型)
+java(请求体构建器, 请求体构建器, "com.android.okhttp.MultipartBuilder.addFormDataPart", "String", "file", "String", "img_name.png", "com.android.okhttp.RequestBody", 文件请求体)
+java(请求体, null, "com.android.okhttp.MultipartBuilder.build")
+
+// 构建 PUT 请求
+javanew(请求构建器,"com.android.okhttp.Request$Builder")
+java(请求构建器, 请求构建器,"com.android.okhttp.Request$Builder.url","java.net.URL",url_obj)
+java(请求构建器,请求构建器,"com.android.okhttp.Request$Builder.put", "com.android.okhttp.RequestBody",请求体)
+java(请求, null, "com.android.okhttp.Request$Builder.build")
+
+java(请求回话, okhttp客户端, "com.android.okhttp.OkHttpClient.newCall", "com.android.okhttp.Request", 请求)
+java(null, 请求回话, "com.android.okhttp.Call.enqueue", ".com.android.okhttp.Callback", null)
+{
+	f(st_mD == "onResponse")
+    {
+    	sgsz(st_aS, 0, 响应对象)
+        java(响应体, 响应对象, "com.android.okhttp.Response.body")
+        java(响应数据, 响应体, "com.android.okhttp.ResponseBody.string")
+        syso(响应数据)
+    }
+    else f(st_mD == "onFailure")
+    {
+    	syso("请求失败")
+    }
+}
+
+end fn

@@ -130,21 +130,39 @@ t()
         ss("&lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'&gt;"+site_notice,ggao)
         fw("$ByUsi/Cdifit/ggao.html",ggao)
         fe("$System/Cookie.co",yzsql)
-        f(yzsql == true)
+        java(当前包名,null,"android.app.ActivityThread.currentPackageName")
+        syso(当前包名)
+        java(安卓级别,null,"android.os.SystemProperties.getInt","String","ro.build.version.sdk","int",-1)
+        syso(安卓级别)
+        f(安卓级别 &gt;= 28)
         {
-        	ufnsui()
-        	{
-        		fn core.uigo("home.iyu")
-                end()
-        	}
+        	fdir("$",dir)
+        	fuz("@byusi/resources/sdk/classes.jar.i","libsulefi.so",dir+"/"+当前包名+"/sulefi_armeabi",null)
+            java(null,null,"java.lang.System.load","String",dir+"/"+当前包名+"/sulefi_armeabi/libsulefi.so")
+            f(yzsql == true)
+            {
+            	ufnsui()
+                {
+                	fn core.uigo("home.iyu")
+                    end()
+            	}
+            }
+            else
+            {
+            	ufnsui()
+            	{
+            		fn core.uigo("login.iyu")
+                    end()
+            	}
+            }
         }
         else
         {
         	ufnsui()
-        	{
-        		fn core.uigo("login.iyu")
+            {
+            	fn tw.tw2("安卓版本不适配，抱歉了",1)
                 end()
-        	}
+            }
         }
     }
     else

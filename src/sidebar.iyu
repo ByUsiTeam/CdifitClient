@@ -251,7 +251,7 @@ layout_marginLeft=6dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">fn api.qq_group("822726278")</eventItme></event>
+<event><eventItme type="clicki">fn api.qq_group("694022396")</eventItme></event>
 </View>
 <View id="31" did="10" type="CardView">
 <ppt>width=-1

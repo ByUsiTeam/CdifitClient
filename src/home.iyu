@@ -39,7 +39,7 @@ dha(dh2,false,true)
 dh(dh2,"duration",250)
 dhset(dhlist,false,dh,dh2)
 us(sidebar.1,"dh",dhlist)
-fn api.ban_scr()</eventItme></event>
+//fn api.ban_scr()</eventItme></event>
 </View>
 <View id="14" did="10" type="ImageView">
 <ppt>width=48dp
@@ -82,7 +82,8 @@ height=-1</ppt>
 height=-1
 background=through
 ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
-<event><eventItme type="onrefresh">us(st_vId,"refreshing","false")
+<event><eventItme type="onrefresh">fn core.ad()
+us(st_vId,"refreshing","false")
 us(6,"background","through")
 us(8,"text","刷新中...")
 fn core.list("https://www.cdifit.cn/api/v3/directory/",ss.url2)</eventItme></event>
