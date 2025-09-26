@@ -305,10 +305,11 @@ end fn
 fn logs(text)
 
 ss("$Logs/"+sss.system_time+".log.byusi.txt",dir)
+time(1,time)
 t()
 {
 	fr(dir,origin)
-    ss(origin+"\n"+text,log_text)
+    ss(origin+"\n"+"[ "+time+" ]  "+text,log_text)
     sr(log_text,"null","/→/",log_text)
     sr(log_text,"\n\n","@→@",log_text)
     sr(log_text,"/→/\n","",log_text)
