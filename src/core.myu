@@ -309,7 +309,7 @@ time(1,time)
 t()
 {
 	fr(dir,origin)
-    ss(origin+"\n"+"[ "+time+" ]  "+text,log_text)
+    ss(origin+"\n"+"[ "+time+" ]\n"+text,log_text)
     sr(log_text,"null","/→/",log_text)
     sr(log_text,"\n\n","@→@",log_text)
     sr(log_text,"/→/\n","",log_text)
