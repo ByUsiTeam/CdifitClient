@@ -196,26 +196,26 @@ background=through</ppt>
 <event><eventItme type="clicki">t()
 {
 	hs("https://www.cdifit.cn/api/v3/site/captcha",json)
-    json(json,json)
-    json(json,"get","code",code)
-    f(code == 0)
-    {
-    	json(json,"get","data",data)
-        ufnsui()
-        {
-        	fr("@byusi/html/captcha.html",cca)
-            sr(cca,"[IMG]",data,cca)
-            fw("$temp/cca.html",cca)
-            us(27,"url","$temp/cca.html")
-        }
-    }
-    else
-    {
-    	ufnsui()
-    	{
-    		fn tw.tw2("请求验证码失败",1)
-    	}
-    }
+	json(json,json)
+	json(json,"get","code",code)
+	f(code == 0)
+	{
+		json(json,"get","data",data)
+		ufnsui()
+		{
+			fr("@byusi/html/captcha.html",cca)
+			sr(cca,"[IMG]",data,cca)
+			fw("$temp/cca.html",cca)
+			us(27,"url","$temp/cca.html")
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			fn tw.tw2("请求验证码失败",1)
+		}
+	}
 }</eventItme></event>
 </View>
 <View id="18" did="11" type="LinearLayout">
@@ -249,8 +249,8 @@ f(cookie != null && cookie != "")
 {
 	call(nr,"mjava","aes.encryptString",cookie,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
 	fw("$System/Cookie.co",nr)
-    fn core.uigo("home.iyu")
-    end()
+	fn core.uigo("home.iyu")
+	end()
 }
 else
 {
@@ -299,26 +299,26 @@ uycl(sss.defaultTheme,true)
 t()
 {
 	hs("https://www.cdifit.cn/api/v3/site/captcha",json)
-    json(json,json)
-    json(json,"get","code",code)
-    f(code == 0)
-    {
-    	json(json,"get","data",data)
-        ufnsui()
-        {
-        	fr("@byusi/html/captcha.html",cca)
-            sr(cca,"[IMG]",data,cca)
-            fw("$temp/cca.html",cca)
-            us(27,"url","$temp/cca.html")
-        }
-    }
-    else
-    {
-    	ufnsui()
-    	{
-    		fn tw.tw2("请求验证码失败",1)
-    	}
-    }
+	json(json,json)
+	json(json,"get","code",code)
+	f(code == 0)
+	{
+		json(json,"get","data",data)
+		ufnsui()
+		{
+			fr("@byusi/html/captcha.html",cca)
+			sr(cca,"[IMG]",data,cca)
+			fw("$temp/cca.html",cca)
+			us(27,"url","$temp/cca.html")
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			fn tw.tw2("请求验证码失败",1)
+		}
+	}
 }</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
 	
@@ -329,8 +329,8 @@ t()
 	{
 		call(nr,"mjava","aes.encryptString",1_c,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
 		fw("$System/cookie.co",nr)
-        fn core.uigo("home.iyu")
-        end()
+		fn core.uigo("home.iyu")
+		end()
 	}
 	else
 	{

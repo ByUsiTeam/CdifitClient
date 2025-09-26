@@ -16,7 +16,7 @@ height=-1</ppt>
 <event><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)</eventItme><eventItme type="onprogresschanged">f(st_nS != 100)
 {
 	us(5,"visibility","visible")
-    us(5,"progress",st_nS)
+	us(5,"progress",st_nS)
 }
 else
 {
@@ -50,24 +50,24 @@ else
 	{
 		end()
 	}
-    else
-    {
-    	endutw()
-    }
+	else
+	{
+		endutw()
+	}
 }</eventItme><eventItme type="loadingComplete">f(sss.url != null)
 {
 	f(sss.text == null)
 	{
 		sj(sss.url,"Cdifit:RootFile:/",null,url)
-        ss("https://www.cdifit.cn/home?path=/"+url,url)
-        us(3,"url",url)
-    }
-    else
-    {
-    	sj(sss.url,"Cdifit:RootFile:/",null,url)
-    	ss("https://www.cdifit.cn/text?p="+url+"&id="+sss.id,url)
-        us(3,"url",url)
-    }
+		ss("https://www.cdifit.cn/home?path=/"+url,url)
+		us(3,"url",url)
+	}
+	else
+	{
+		sj(sss.url,"Cdifit:RootFile:/",null,url)
+		ss("https://www.cdifit.cn/text?p="+url+"&id="+sss.id,url)
+		us(3,"url",url)
+	}
 }
 else
 {

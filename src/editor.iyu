@@ -34,17 +34,17 @@ background=through</ppt>
 t()
 {
 	ss("https://www.cdifit.cn/api/v3/file/content/"+sss.url_data,urla)
-    fr("$System/Cookie.co",fda)
-    call(cookie,"mjava","aes.decryptString",fda,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+	fr("$System/Cookie.co",fda)
+	call(cookie,"mjava","aes.decryptString",fda,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
 	hs(urla,null, "utf-8",cookie,data)
-    ufnsui()
-    {
-    	/.
-    	sss bjknrw_js=data
-        has(3,"set()")
-        ./
-        us(11,"text",data)
-    }
+	ufnsui()
+	{
+		/.
+		sss bjknrw_js=data
+		has(3,"set()")
+		./
+		us(11,"text",data)
+	}
 }</eventItme></event>
 </View>
 <View id="9" did="7" type="CardView">

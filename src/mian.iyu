@@ -33,43 +33,43 @@ src=17301567</ppt>
 {
 	sss cw =false
 	fr("@byusi/resources/Lottie/loading.json",data)
-    fn Lottie.setImageLottie(4,data,-1,true)
-    sss system_url ="https://www.cdifit.cn/"
-    t()
-    {
-    	ss(sss.system_url+"api/v3/site/config",url)
-    	hs(url,json)
-        f(json != null)
-        {
-        	json(json,json)
-            fw("$ByUsi/Config.json",json)
-            json(json,"get","data",data)
-            json(data,"get","defaultTheme",defaultTheme)
-            sss defaultTheme =defaultTheme
-            fw("$temp/defaultTheme",defaultTheme)
-            syso(sss.defaultTheme)
-            json(data,"get","site_notice",site_notice)
-            ss("&lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'&gt;"+site_notice,ggao)
-            fw("$ByUsi/Cdifit/ggao.html",ggao)
-            ufnsui()
-            {
-            	uigo("home.iyu")
-                lan(0)
-                end()
-            }
-        }
-        else
-        {
-        	ufnsui()
-        	{
-    	    	fn tw.tw2("错误，未链接网络，点击错误图标可再次刷新",1)
-                sss cw =true
-                fr("@byusi/resources/Lottie/error.json",data)
-                fn Lottie.setImageLottie(4,data,0,true)
-            }
-        }
-    }
-    fd("$Temp/shb.Sl.txt",yz)
+	fn Lottie.setImageLottie(4,data,-1,true)
+	sss system_url ="https://www.cdifit.cn/"
+	t()
+	{
+		ss(sss.system_url+"api/v3/site/config",url)
+		hs(url,json)
+		f(json != null)
+		{
+			json(json,json)
+			fw("$ByUsi/Config.json",json)
+			json(json,"get","data",data)
+			json(data,"get","defaultTheme",defaultTheme)
+			sss defaultTheme =defaultTheme
+			fw("$temp/defaultTheme",defaultTheme)
+			syso(sss.defaultTheme)
+			json(data,"get","site_notice",site_notice)
+			ss("&lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'&gt;"+site_notice,ggao)
+			fw("$ByUsi/Cdifit/ggao.html",ggao)
+			ufnsui()
+			{
+				uigo("home.iyu")
+				lan(0)
+				end()
+			}
+		}
+		else
+		{
+			ufnsui()
+			{
+				fn tw.tw2("错误，未链接网络，点击错误图标可再次刷新",1)
+				sss cw =true
+				fr("@byusi/resources/Lottie/error.json",data)
+				fn Lottie.setImageLottie(4,data,0,true)
+			}
+		}
+	}
+	fd("$Temp/shb.Sl.txt",yz)
 }</eventItme></event>
 </View>
 <View id="6" did="1" type="LinearLayout">
@@ -118,66 +118,66 @@ t()
 {
 	ss(sss.system_url+"api/v3/site/config",url)
 	hs(url,json)
-    f(json != null)
-    {
-    	json(json,json)
-        fw("$ByUsi/Config.json",json)
-        json(json,"get","data",data)
-        json(data,"get","defaultTheme",defaultTheme)
-        sss defaultTheme =defaultTheme
-        f(defaultTheme != null)
-        {
-        	fw("$temp/defaultTheme",defaultTheme)
-        }
-        json(data,"get","site_notice",site_notice)
-        ss("&lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'&gt;"+site_notice,ggao)
-        fw("$ByUsi/Cdifit/ggao.html",ggao)
-        fe("$System/Cookie.co",yzsql)
-        java(当前包名,null,"android.app.ActivityThread.currentPackageName")
-        syso(当前包名)
-        java(安卓级别,null,"android.os.SystemProperties.getInt","String","ro.build.version.sdk","int",-1)
-        syso(安卓级别)
-        f(安卓级别 &gt;= 28)
-        {
-        	fdir("$",dir)
-        	fuz("@byusi/resources/sdk/classes.jar.i","libsulefi.so",dir+"/"+当前包名+"/sulefi_armeabi",null)
-            java(null,null,"java.lang.System.load","String",dir+"/"+当前包名+"/sulefi_armeabi/libsulefi.so")
-            f(yzsql == true)
-            {
-            	ufnsui()
-                {
-                	fn core.uigo("home.iyu")
-                    end()
-            	}
-            }
-            else
-            {
-            	ufnsui()
-            	{
-            		fn core.uigo("login.iyu")
-                    end()
-            	}
-            }
-        }
-        else
-        {
-        	ufnsui()
-            {
-            	fn tw.tw2("安卓版本不适配，抱歉了",1)
-                end()
-            }
-        }
-    }
-    else
-    {
-    	ufnsui()
-    	{
-    		fr("@byusi/resources/Lottie/error.json",data)
-            fn Lottie.setImageLottie(4,data,0,true)
-    		fn tw.tw2("错误，未链接网络，点击错误图标可再次刷新",1)
-            sss cw =true
-        }
-    }
+	f(json != null)
+	{
+		json(json,json)
+		fw("$ByUsi/Config.json",json)
+		json(json,"get","data",data)
+		json(data,"get","defaultTheme",defaultTheme)
+		sss defaultTheme =defaultTheme
+		f(defaultTheme != null)
+		{
+			fw("$temp/defaultTheme",defaultTheme)
+		}
+		json(data,"get","site_notice",site_notice)
+		ss("&lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'&gt;"+site_notice,ggao)
+		fw("$ByUsi/Cdifit/ggao.html",ggao)
+		fe("$System/Cookie.co",yzsql)
+		java(当前包名,null,"android.app.ActivityThread.currentPackageName")
+		syso(当前包名)
+		java(安卓级别,null,"android.os.SystemProperties.getInt","String","ro.build.version.sdk","int",-1)
+		syso(安卓级别)
+		f(安卓级别 &gt;= 28)
+		{
+			fdir("$",dir)
+			fuz("@byusi/resources/sdk/classes.jar.i","libsulefi.so",dir+"/"+当前包名+"/sulefi_armeabi",null)
+			java(null,null,"java.lang.System.load","String",dir+"/"+当前包名+"/sulefi_armeabi/libsulefi.so")
+			f(yzsql == true)
+			{
+				ufnsui()
+				{
+					fn core.uigo("home.iyu")
+					end()
+				}
+			}
+			else
+			{
+				ufnsui()
+				{
+					fn core.uigo("login.iyu")
+					end()
+				}
+			}
+		}
+		else
+		{
+			ufnsui()
+			{
+				fn tw.tw2("安卓版本不适配，抱歉了",1)
+				end()
+			}
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			fr("@byusi/resources/Lottie/error.json",data)
+			fn Lottie.setImageLottie(4,data,0,true)
+			fn tw.tw2("错误，未链接网络，点击错误图标可再次刷新",1)
+			sss cw =true
+		}
+	}
 }
 fd("$Temp/shb.Sl.txt",yz)</eventItme><eventItme type="downkey">f(st_kC == 4)
 {

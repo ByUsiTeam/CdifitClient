@@ -2,15 +2,15 @@ fn getNR()
 ufnsui()
 {
 	slg(sss.bjknr_js,cd)
-    f(cd&gt;100)
-    {
-    	fw("$read.txt",sss.bjknr_js)
-        tw("内容过多，已经写入 $read.txt ，请自行查看")
-    }
-    else
-    {
+	f(cd&gt;100)
+	{
+		fw("$read.txt",sss.bjknr_js)
+		tw("内容过多，已经写入 $read.txt ，请自行查看")
+	}
+	else
+	{
 	tw(sss.bjknr_js)
-    }
+	}
 }
 end fn
 

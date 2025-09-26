@@ -27,16 +27,16 @@ java(请求回话, okhttp客户端, "com.android.okhttp.OkHttpClient.newCall", "
 java(null, 请求回话, "com.android.okhttp.Call.enqueue", ".com.android.okhttp.Callback", null)
 {
 	f(st_mD == "onResponse")
-    {
-    	sgsz(st_aS, 0, 响应对象)
-        java(响应体, 响应对象, "com.android.okhttp.Response.body")
-        java(响应数据, 响应体, "com.android.okhttp.ResponseBody.string")
-        syso(响应数据)
-    }
-    else f(st_mD == "onFailure")
-    {
-    	syso("请求失败")
-    }
+	{
+		sgsz(st_aS, 0, 响应对象)
+		java(响应体, 响应对象, "com.android.okhttp.Response.body")
+		java(响应数据, 响应体, "com.android.okhttp.ResponseBody.string")
+		syso(响应数据)
+	}
+	else f(st_mD == "onFailure")
+	{
+		syso("请求失败")
+	}
 }
 
 end fn

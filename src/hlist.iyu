@@ -92,295 +92,295 @@ slower(name,name2)
 f(type == "file")
 {
 	f(name2 *? ".png" || name2 *? ".jpg" || name2 *?".jpeg" || name2 *? ".webp")
-    {
-    	utw(null,"","请求数据中...",true,v)
-    	{
-	    }
-        fr("@byusi/resources/template/json/picturePreview.json",data)
-        sr(data,"[SRC]",id,post_data)
-        fe("$System/ResourceLinkCache/"+id,rlc)
-    	t()
-    	{
-    		f(rlc == false)
-    		{
-    			hs("https://www.cdifit.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
-                fw("$System/ResourceLinkCache/"+id,fhz)
-    		}
-            else
-            {
-            	fr("$System/ResourceLinkCache/"+id,fhz)
-            }
-            json(fhz,jsdata)
-            syso(jsdata)
-            json(jsdata,"get","code",code)
-            f(code == 0)
-            {
-            	json(jsdata,"list","data",list)
-                json(list,"size",size)
-                w(size &gt; 0)
-                {
-                	s-(1,size)
-                    json(list,"data",size,item)
-                    json(item,"get","url",url)
-                    s size ="-1"
-                }
-                sss url =url
-                ufnsui()
-                {
-                	endutw()
-                    fn core.uigo("picturePreview.iyu")
-                }
-            }
-    	}
-        else
-        {
-        	ufnsui()
-        	{
-        		endutw()
-                utw(null,"","获取资源失败",false,v)
-                {
-                }
-        	}
-        }
-    }
-    else f(name2 *? ".mp4")
-    {
-	    utw(null,"","请求数据中...",true,v)
-    	{
-	    }
-        fr("@byusi/resources/template/json/picturePreview.json",data)
-        sr(data,"[SRC]",id,post_data)
-        fe("$System/ResourceLinkCache/"+id,rlc)
-    	t()
-    	{
-    		f(rlc == false)
-    		{
-    			hs("https://www.cdifit.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
-                fw("$System/ResourceLinkCache/"+id,fhz)
-    		}
-            else
-            {
-            	fr("$System/ResourceLinkCache/"+id,fhz)
-            }
-            json(fhz,jsdata)
-            syso(jsdata)
-            json(jsdata,"get","code",code)
-            f(code == 0)
-            {
-            	json(jsdata,"list","data",list)
-                json(list,"size",size)
-                w(size &gt; 0)
-                {
-                	s-(1,size)
-                    json(list,"data",size,item)
-                    json(item,"get","url",url)
-                    s size ="-1"
-                }
-                sss url =url
-                ufnsui()
-                {
-                	endutw()
-                    fn core.uigo("bfq2.iyu")
-                }
-            }
-            else
-            {
-            	ufnsui()
-            	{
-            		utw(null,"","获取资源失败",false,v)
-            		{
-            		}
-            	}
-            }
-        }
-    }
-    else f(name2 *? ".mp3" || name2 *? ".flac" || name2 *? ".m4a" || name2 *? ".ogg")
-    {
-    	utw(null,"","请求数据中...",true,v)
-    	{
-	    }
-        fr("@byusi/resources/template/json/picturePreview.json",data)
-        sr(data,"[SRC]",id,post_data)
-    	fe("$System/ResourceLinkCache/"+id,rlc)
-    	t()
-    	{
-    		f(rlc == false)
-    		{
-    			hs("https://www.cdifit.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
-                fw("$System/ResourceLinkCache/"+id,fhz)
-    		}
-            else
-            {
-            	fr("$System/ResourceLinkCache/"+id,fhz)
-            }
-            json(fhz,jsdata)
-            syso(jsdata)
-            json(jsdata,"get","code",code)
-            f(code == 0)
-            {
-            	json(jsdata,"list","data",list)
-                json(list,"size",size)
-                w(size &gt; 0)
-                {
-                	s-(1,size)
-                    json(list,"data",size,item)
-                    json(item,"get","url",url)
-                    s size ="-1"
-                }
-                ufnsui()
-                {
-                	us(music.14,"visibility","visible")
-                    bfm(url,sss.bfm)
-                    endutw()
-                }
-                sss bfq_jsq =0
-                w(sss.bfq_jsq == 0)
-                {
-                	bfms(sss.bfm,"dn",dn)
-                    bfms(sss.bfm,"cn",cn)
-                    sn(cn / dn,jd)
-                    s(jd * "100",jdt)
-                    /.
-                    f(jdt != 100)
-                    {
-                    	ufnsui()
-                        {
-                        	us(music.4,"progress",jdt)
-                        }
-                    }
-                    else
-                    {
-                    	sss bfq_jsq =1
-                        ufnsui()
-                        {
-                        	us(music.14,"visibility","gone")
-                        }
-                    }
-                    ./
-                    stop(250)
-                }
-            }
-            else
-            {
-            	ufnsui()
-            	{
-            		endutw()
-            		utw(null,"","请求资源失败",false,v)
-            		{
-            		}
-            	}
-            }
-    	}
-    }
-    else f(name2 *? ".xlsx" || name2 *? ".ppt" || name2 *? ".doc" || name2 *? ".docx" || name2 *? ".pptx" || name2 *? ".xls")
-    {
-    	utw(null,"","请求数据中...",true,v)
-    	{
-    	}
-        t()
-        {
-        	ss("https://www.cdifit.cn/api/v3/file/doc/"+id,url)
-        	hs(url,null,"utf-8",sss.cookie_data,data)
-            json(data,jsdata)
-            json(jsdata,"get","code",cddata)
-            f(cddata == 0)
-            {
-            	json(jsdata,"get","data",datta)
-            	json(datta,"get","url",furl)
-                syso(furl)
-                sss url =furl
-                ufnsui()
-                {
-                	endutw()
-                    fn core.uigo("web.iyu")
-                }
-            }
-            else
-            {
-            	ufnsui()
-            	{
-            		endutw()
-                    utw(null,"","请求错误",false,v)
-                    {
-                    }
-            	}
-            }
-        }
-    }
-    else
-    {
-    	utw(null,"","请求数据中...",true,v)
-    	{
-	    }
-    	fr("@byusi/resources/template/json/picturePreview.json",data)
-        sr(data,"[SRC]",id,post_data)
-    	fe("$System/ResourceLinkCache/"+id,rlc)
-    	t()
-    	{
-    		f(rlc == false)
-    		{
-    			hs("https://www.cdifit.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
-                fw("$System/ResourceLinkCache/"+id,fhz)
-    		}
-            else
-            {
-            	fr("$System/ResourceLinkCache/"+id,fhz)
-            }
-            json(fhz,jsdata)
-            syso(jsdata)
-            json(jsdata,"get","code",code)
-            f(code == 0)
-            {
-            	json(jsdata,"list","data",list)
-                json(list,"size",size)
-                w(size &gt; 0)
-                {
-                	s-(1,size)
-                    json(list,"data",size,item)
-                    json(item,"get","url",url)
-                    s size ="-1"
-                }
-                sss url =url
-                ufnsui()
-                {
-                	endutw()
-                	utw(null,"","该文件本客户端暂不支持预览\n是否下载该文件？","下载","取消","文本编辑器打开",true,v)
-                	{
-                		hws(url)
-                	}
-                    else
-                    {
-                    	endutw()
-                    }
-                    else
-                    {
-                    	sss url_data =id
-                        utw(null,"","请选择文件的代开方式","本地打开","web端代开",false,v)
-                        {
-                        	fn core.uigo("editor.iyu")
-                        }
-                        else
-                        {
-                        	ug(11,"text",dir)
-                            ss(dir+"/"+name,dir_original)
-                        	sss url =dir_original
-                            sss text =true
-                            sss id =id
-                            fn core.uigo("web_cdifit.iyu")
-                        }
-                    }
-                }
-            }
-            else
-            {
-                ufnsui()
-                {
-                	endutw()
-                	fn tw.tw2("响应错误或权限不足",1)
-                }
-            }
-    	}
-    }
+	{
+		utw(null,"","请求数据中...",true,v)
+		{
+		}
+		fr("@byusi/resources/template/json/picturePreview.json",data)
+		sr(data,"[SRC]",id,post_data)
+		fe("$System/ResourceLinkCache/"+id,rlc)
+		t()
+		{
+			f(rlc == false)
+			{
+				hs("https://www.cdifit.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
+				fw("$System/ResourceLinkCache/"+id,fhz)
+			}
+			else
+			{
+				fr("$System/ResourceLinkCache/"+id,fhz)
+			}
+			json(fhz,jsdata)
+			syso(jsdata)
+			json(jsdata,"get","code",code)
+			f(code == 0)
+			{
+				json(jsdata,"list","data",list)
+				json(list,"size",size)
+				w(size &gt; 0)
+				{
+					s-(1,size)
+					json(list,"data",size,item)
+					json(item,"get","url",url)
+					s size ="-1"
+				}
+				sss url =url
+				ufnsui()
+				{
+					endutw()
+					fn core.uigo("picturePreview.iyu")
+				}
+			}
+		}
+		else
+		{
+			ufnsui()
+			{
+				endutw()
+				utw(null,"","获取资源失败",false,v)
+				{
+				}
+			}
+		}
+	}
+	else f(name2 *? ".mp4")
+	{
+		utw(null,"","请求数据中...",true,v)
+		{
+		}
+		fr("@byusi/resources/template/json/picturePreview.json",data)
+		sr(data,"[SRC]",id,post_data)
+		fe("$System/ResourceLinkCache/"+id,rlc)
+		t()
+		{
+			f(rlc == false)
+			{
+				hs("https://www.cdifit.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
+				fw("$System/ResourceLinkCache/"+id,fhz)
+			}
+			else
+			{
+				fr("$System/ResourceLinkCache/"+id,fhz)
+			}
+			json(fhz,jsdata)
+			syso(jsdata)
+			json(jsdata,"get","code",code)
+			f(code == 0)
+			{
+				json(jsdata,"list","data",list)
+				json(list,"size",size)
+				w(size &gt; 0)
+				{
+					s-(1,size)
+					json(list,"data",size,item)
+					json(item,"get","url",url)
+					s size ="-1"
+				}
+				sss url =url
+				ufnsui()
+				{
+					endutw()
+					fn core.uigo("bfq2.iyu")
+				}
+			}
+			else
+			{
+				ufnsui()
+				{
+					utw(null,"","获取资源失败",false,v)
+					{
+					}
+				}
+			}
+		}
+	}
+	else f(name2 *? ".mp3" || name2 *? ".flac" || name2 *? ".m4a" || name2 *? ".ogg")
+	{
+		utw(null,"","请求数据中...",true,v)
+		{
+		}
+		fr("@byusi/resources/template/json/picturePreview.json",data)
+		sr(data,"[SRC]",id,post_data)
+		fe("$System/ResourceLinkCache/"+id,rlc)
+		t()
+		{
+			f(rlc == false)
+			{
+				hs("https://www.cdifit.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
+				fw("$System/ResourceLinkCache/"+id,fhz)
+			}
+			else
+			{
+				fr("$System/ResourceLinkCache/"+id,fhz)
+			}
+			json(fhz,jsdata)
+			syso(jsdata)
+			json(jsdata,"get","code",code)
+			f(code == 0)
+			{
+				json(jsdata,"list","data",list)
+				json(list,"size",size)
+				w(size &gt; 0)
+				{
+					s-(1,size)
+					json(list,"data",size,item)
+					json(item,"get","url",url)
+					s size ="-1"
+				}
+				ufnsui()
+				{
+					us(music.14,"visibility","visible")
+					bfm(url,sss.bfm)
+					endutw()
+				}
+				sss bfq_jsq =0
+				w(sss.bfq_jsq == 0)
+				{
+					bfms(sss.bfm,"dn",dn)
+					bfms(sss.bfm,"cn",cn)
+					sn(cn / dn,jd)
+					s(jd * "100",jdt)
+					/.
+					f(jdt != 100)
+					{
+						ufnsui()
+						{
+							us(music.4,"progress",jdt)
+						}
+					}
+					else
+					{
+						sss bfq_jsq =1
+						ufnsui()
+						{
+							us(music.14,"visibility","gone")
+						}
+					}
+					./
+					stop(250)
+				}
+			}
+			else
+			{
+				ufnsui()
+				{
+					endutw()
+					utw(null,"","请求资源失败",false,v)
+					{
+					}
+				}
+			}
+		}
+	}
+	else f(name2 *? ".xlsx" || name2 *? ".ppt" || name2 *? ".doc" || name2 *? ".docx" || name2 *? ".pptx" || name2 *? ".xls")
+	{
+		utw(null,"","请求数据中...",true,v)
+		{
+		}
+		t()
+		{
+			ss("https://www.cdifit.cn/api/v3/file/doc/"+id,url)
+			hs(url,null,"utf-8",sss.cookie_data,data)
+			json(data,jsdata)
+			json(jsdata,"get","code",cddata)
+			f(cddata == 0)
+			{
+				json(jsdata,"get","data",datta)
+				json(datta,"get","url",furl)
+				syso(furl)
+				sss url =furl
+				ufnsui()
+				{
+					endutw()
+					fn core.uigo("web.iyu")
+				}
+			}
+			else
+			{
+				ufnsui()
+				{
+					endutw()
+					utw(null,"","请求错误",false,v)
+					{
+					}
+				}
+			}
+		}
+	}
+	else
+	{
+		utw(null,"","请求数据中...",true,v)
+		{
+		}
+		fr("@byusi/resources/template/json/picturePreview.json",data)
+		sr(data,"[SRC]",id,post_data)
+		fe("$System/ResourceLinkCache/"+id,rlc)
+		t()
+		{
+			f(rlc == false)
+			{
+				hs("https://www.cdifit.cn/api/v3/file/source",post_data,"utf-8",sss.cookie_data,fhz)
+				fw("$System/ResourceLinkCache/"+id,fhz)
+			}
+			else
+			{
+				fr("$System/ResourceLinkCache/"+id,fhz)
+			}
+			json(fhz,jsdata)
+			syso(jsdata)
+			json(jsdata,"get","code",code)
+			f(code == 0)
+			{
+				json(jsdata,"list","data",list)
+				json(list,"size",size)
+				w(size &gt; 0)
+				{
+					s-(1,size)
+					json(list,"data",size,item)
+					json(item,"get","url",url)
+					s size ="-1"
+				}
+				sss url =url
+				ufnsui()
+				{
+					endutw()
+					utw(null,"","该文件本客户端暂不支持预览\n是否下载该文件？","下载","取消","文本编辑器打开",true,v)
+					{
+						hws(url)
+					}
+					else
+					{
+						endutw()
+					}
+					else
+					{
+						sss url_data =id
+						utw(null,"","请选择文件的代开方式","本地打开","web端代开",false,v)
+						{
+							fn core.uigo("editor.iyu")
+						}
+						else
+						{
+							ug(11,"text",dir)
+							ss(dir+"/"+name,dir_original)
+							sss url =dir_original
+							sss text =true
+							sss id =id
+							fn core.uigo("web_cdifit.iyu")
+						}
+					}
+				}
+			}
+			else
+			{
+				ufnsui()
+				{
+					endutw()
+					fn tw.tw2("响应错误或权限不足",1)
+				}
+			}
+		}
+	}
 }
 else f(type == "dir")
 {
@@ -388,12 +388,12 @@ else f(type == "dir")
 	{
 		ss(url2+name,url)
 	}
-    else
-    {
-    	ss(url2+"/"+name,url)
-    }
-    sss url2 =url
-    syso(sss.url2)
+	else
+	{
+		ss(url2+"/"+name,url)
+	}
+	sss url2 =url
+	syso(sss.url2)
 	fn core.uigo("dir.iyu")
 }</eventItme></event>
 </View>

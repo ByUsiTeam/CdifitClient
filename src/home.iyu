@@ -192,10 +192,10 @@ us(music.14,"visibility","gone")
 t()
 {
 	hs("https://api.www.cdifit.cn/yy/?form=text",url)
-    ufnsui()
-    {
-    	fn xui.动态提示(1,"@tip.xml",url)
-    }
+	ufnsui()
+	{
+		fn xui.动态提示(1,"@tip.xml",url)
+	}
 }
 
 fr("$ByUsi/Cdifit/ggao.html",ggqr_1)
@@ -206,19 +206,19 @@ f(ggqr_1 != ggqr_2)
 	{
 		endutw()
 	}
-    else
-    {
-    	fw("$ByUsi/Cdifit/ggao.html.tmp",ggqr_1)
-        endutw()
-    }
+	else
+	{
+		fw("$ByUsi/Cdifit/ggao.html.tmp",ggqr_1)
+		endutw()
+	}
 }</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
 	utw(null,"","确定退出 CdifitClient 软件吗？","确定","取消",true,v)
 	{
 		end()
 	}
-    else
-    {
-    	endutw()
-    }
+	else
+	{
+		endutw()
+	}
 }</eventItme></UIEventset>

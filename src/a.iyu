@@ -10,34 +10,34 @@ gravity=center_vertical</ppt>
 ulag(st_vW, -1, ll)
 f(ll == false)
 {
-  ss(sss.oo + name, filename)
-  fdir(filename, filename)
-  sss pp = filename
-  syso(sss.pp)
-  endcode
-  }
+	ss(sss.oo + name, filename)
+	fdir(filename, filename)
+	sss pp = filename
+	syso(sss.pp)
+	endcode
+	}
 f(name == "../上层文件夹")
 {
-  slof(sss.oo, "/", fg)
-  f(sss.oo ? sss.oo2)
-  {
-  	f(fg &gt; 0)
-      {
-      	ssg(sss.oo, 0, fg, filename)
-          sss oo = filename
-          fn selector.a()
-      }
-  }
-  else
-  {
-  	fn tw.tw("已经到底了")
-  }
+	slof(sss.oo, "/", fg)
+	f(sss.oo ? sss.oo2)
+	{
+		f(fg &gt; 0)
+		{
+			ssg(sss.oo, 0, fg, filename)
+			sss oo = filename
+			fn selector.a()
+		}
+	}
+	else
+	{
+		fn tw.tw("已经到底了")
+	}
 }
 else
 {
-  ss(sss.oo + "/" + name, filename)
-  sss oo = filename
-  fn selector.a()
+	ss(sss.oo + "/" + name, filename)
+	sss oo = filename
+	fn selector.a()
 }
 </eventItme></event>
 </View>

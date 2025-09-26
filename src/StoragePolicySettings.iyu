@@ -53,27 +53,27 @@ uycl(sss.defaultTheme,true)</eventItme><eventItme type="loadingComplete">us(5,"r
 t()
 {
 	fr("$System/Cookie.co",co)
-    call(cookie,"mjava","aes.decryptString",co,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+	call(cookie,"mjava","aes.decryptString",co,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
 	hs("https://www.cdifit.cn/api/v3/user/setting/policies",null,"utf-8",cookie,urldata)
-    json(urldata,jsondata)
-    json(jsondata,"get","code",code)
-    f(code == 0)
-    {
-    	json(jsondata,"list","data",data)
-        json(data,"size",size)
-        s size_jsq =0
-        w(size_jsq &lt; size)
-        {
-        	json(data,"data",size_jsq,item)
-            json(item,"get","name",name)
-            json(item,"get","id",id)
-            s(size_jsq + "1",size_jsq)
-            ula(list,4=name,6=id)
-        }
-        ufnsui()
-        {
-        	us(5,"refreshing","false")
-        	uls(4,list,"list.iyu",-2,-2)
-        }
-    }
+	json(urldata,jsondata)
+	json(jsondata,"get","code",code)
+	f(code == 0)
+	{
+		json(jsondata,"list","data",data)
+		json(data,"size",size)
+		s size_jsq =0
+		w(size_jsq &lt; size)
+		{
+			json(data,"data",size_jsq,item)
+			json(item,"get","name",name)
+			json(item,"get","id",id)
+			s(size_jsq + "1",size_jsq)
+			ula(list,4=name,6=id)
+		}
+		ufnsui()
+		{
+			us(5,"refreshing","false")
+			uls(4,list,"list.iyu",-2,-2)
+		}
+	}
 }</eventItme></UIEventset>

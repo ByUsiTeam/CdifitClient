@@ -16,9 +16,9 @@ t()
 	else
 	{
 		//现实实现代码
-        fr("$System/Cookie.co",cookie_data_bak)
-        call(cookie_data,"mjava","aes.decryptString",cookie_data_bak,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
-        //fr("$System/Cookie",cookie_data)
+		fr("$System/Cookie.co",cookie_data_bak)
+		call(cookie_data,"mjava","aes.decryptString",cookie_data_bak,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+		//fr("$System/Cookie",cookie_data)
 		hs(hurl,null,"utf-8",cookie_data,true,data)
 		fw("$System/homeList.json",data)
 	}
@@ -30,27 +30,27 @@ t()
 	f(code == 0)
 	{
 		json(ddata,"get","policy",policy)
-        json(policy,"get","name",Sname)
-        ufnsui()
-        {
-        	us(sidebar.27,"text",Sname)
-        }
+		json(policy,"get","name",Sname)
+		ufnsui()
+		{
+			us(sidebar.27,"text",Sname)
+		}
 		json(ddata,"list","objects",list)
 		json(list,"size",size)
-        f(size != 0)
-        {
-        	ufnsui()
-        	{
-        		us(20,"visibility","gone")
-        	}
-        }
-        else
-        {
-        	ufnsui()
-        	{
-        		us(20,"visibility","visible")
-        	}
-        }
+		f(size != 0)
+		{
+			ufnsui()
+			{
+				us(20,"visibility","gone")
+			}
+		}
+		else
+		{
+			ufnsui()
+			{
+				us(20,"visibility","visible")
+			}
+		}
 		s size_jsq =0
 		w(size_jsq &lt; size)
 		{
@@ -119,31 +119,31 @@ t()
 				{
 					s icon ="@byusi/resources/icon/music-note-beamed.png"
 				}
-                else f(name2 *? ".doc")
-                {
-                	s icon ="@byusi/resources/icon/filetype-doc.png"
-                }
-                else f(name2 *? ".docx")
-                {
-                	s icon ="@byusi/resources/icon/filetype-docx.png"
-                }
+				else f(name2 *? ".doc")
+				{
+					s icon ="@byusi/resources/icon/filetype-doc.png"
+				}
+				else f(name2 *? ".docx")
+				{
+					s icon ="@byusi/resources/icon/filetype-docx.png"
+				}
 				else
 				{
 					s icon ="@byusi/resources/icon/file-earmark.png"
 				}
 			}
 			ss(size_jsq + 1,size_jsq)
-            sbp(icon,icon)
+			sbp(icon,icon)
 			ula(uilist,5=name,6=id,10=icon,11=type,12=url2)
-            ss("Name → "+name+"\nId → "+id+"\nIcon → "+icon+"\nType → "+type+"\nUrl2 → "+url2+"\n",log_text)
-            syso(log_text)
-            fn core.logs(log_text)
+			ss("Name → "+name+"\nId → "+id+"\nIcon → "+icon+"\nType → "+type+"\nUrl2 → "+url2+"\n",log_text)
+			syso(log_text)
+			fn core.logs(log_text)
 		}
 		ufnsui()
 		{
 			us(6,"visibility","gone")
 			uls(4,uilist,"hlist.iyu",-2,-2)
-            us(17,"visibility","visible")
+			us(17,"visibility","visible")
 		}
 	}
 	else
@@ -181,12 +181,12 @@ fn core.cookie_qr()
 //界面操作逻辑
 f(Sidebar_Closed == true)
 {
-    //隐藏界面
+	//隐藏界面
 	us(sidebar.1,"visibility","gone")
 }
 else
 {
-    //写入验证文件并显示提示
+	//写入验证文件并显示提示
 	fw("$System/Config/sidebar","")
 	utw(null,"","想要打开侧边栏，请点击上方的目录栏",false,v)
 	{
@@ -200,28 +200,28 @@ fn ad()
 t()
 {
 	hs("https://api.www.cdifit.cn/api/cdifitclient/ad.json",jsu)
-    json(jsu,jssu)
-    json(jssu,"get","exist",exist)
-    json(jssu,"get","picture",picture)
-    json(jssu,"get","AdUrl",AdUrl)
-    f(exist == false)
-    {
-    	ufnsui()
-    	{
-    		us(sidebar.17,"visibility","gone")
-    	}
-    }
-    else
-    {
-    	fr("@byusi/html/captcha.html",advhtml)
-        sr(advhtml,"[IMG]",picture,advhtml)
-        fw("$temp/ad.html",advhtml)
-        ufnsui()
-        {
-        	us(sidebar.18,"url","$temp/ad.html")
-        }
-        fw("$temp/clickAdvertisement",AdUrl)
-    }
+	json(jsu,jssu)
+	json(jssu,"get","exist",exist)
+	json(jssu,"get","picture",picture)
+	json(jssu,"get","AdUrl",AdUrl)
+	f(exist == false)
+	{
+		ufnsui()
+		{
+			us(sidebar.17,"visibility","gone")
+		}
+	}
+	else
+	{
+		fr("@byusi/html/captcha.html",advhtml)
+		sr(advhtml,"[IMG]",picture,advhtml)
+		fw("$temp/ad.html",advhtml)
+		ufnsui()
+		{
+			us(sidebar.18,"url","$temp/ad.html")
+		}
+		fw("$temp/clickAdvertisement",AdUrl)
+	}
 }
 
 end fn
@@ -243,45 +243,45 @@ utw(null,"","请选择操作","删除","创建分享","确定",false,v)
 else
 {
 	fr("@byusi/resources/template/json/share.json",json)
-    json(json,data)
-    json(data,"set","id",id)
-    f(type == "file")
-    {
-    	json(data,"set","is_dir","false")
-    }
-    else f(type == "dir")
-    {
-    	json(data,"set","is_dir","true")
-    }
-    t()
-    {
-    	fr("$System/Cookie.co",cookie_bak)
-        call(cookie,"mjava","aes.decryptString",cookie_bak,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
-        //fr("$System/Cookie",cookie)
-    	hs("https://www.cdifit.cn/api/v3/share",data,"utf-8",cookie,url)
-        json(url,udata)
-        json(udata,"get","code",code)
-        f(code == 0)
-        {
-        	json(udata,"get","data",fxurl)
-            ufnsui()
-            {
-            	utw(null,"","已创建分享链接："+fxurl,"确定","复制分享链接",false,v)
-            	{
-            		endutw()
-            	}
-                else
-                {
-                	sxb(fxurl)
-                    endutw()
-                }
-            }
-        }
-        else
-        {
-        	
-        }
-    }
+	json(json,data)
+	json(data,"set","id",id)
+	f(type == "file")
+	{
+		json(data,"set","is_dir","false")
+	}
+	else f(type == "dir")
+	{
+		json(data,"set","is_dir","true")
+	}
+	t()
+	{
+		fr("$System/Cookie.co",cookie_bak)
+		call(cookie,"mjava","aes.decryptString",cookie_bak,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+		//fr("$System/Cookie",cookie)
+		hs("https://www.cdifit.cn/api/v3/share",data,"utf-8",cookie,url)
+		json(url,udata)
+		json(udata,"get","code",code)
+		f(code == 0)
+		{
+			json(udata,"get","data",fxurl)
+			ufnsui()
+			{
+				utw(null,"","已创建分享链接："+fxurl,"确定","复制分享链接",false,v)
+				{
+					endutw()
+				}
+				else
+				{
+					sxb(fxurl)
+					endutw()
+				}
+			}
+		}
+		else
+		{
+			
+		}
+	}
 }
 else
 {
@@ -309,12 +309,12 @@ time(1,time)
 t()
 {
 	fr(dir,origin)
-    ss(origin+"\n"+"[ "+time+" ]\n"+text,log_text)
-    sr(log_text,"null","/→/",log_text)
-    sr(log_text,"\n\n","@→@",log_text)
-    sr(log_text,"/→/\n","",log_text)
-    sr(log_text,"@→@","\n\n",log_text)
-    fw(dir,log_text)
+	ss(origin+"\n"+"[ "+time+" ]\n"+text,log_text)
+	sr(log_text,"null","/→/",log_text)
+	sr(log_text,"\n\n","@→@",log_text)
+	sr(log_text,"/→/\n","",log_text)
+	sr(log_text,"@→@","\n\n",log_text)
+	fw(dir,log_text)
 }
 
 end fn
