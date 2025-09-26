@@ -39,8 +39,11 @@ t()
 	hs(urla,null, "utf-8",cookie,data)
     ufnsui()
     {
+    	/.
     	sss bjknrw_js=data
         has(3,"set()")
+        ./
+        us(11,"text",data)
     }
 }</eventItme></event>
 </View>
@@ -61,14 +64,41 @@ background=through</ppt>
 <View id="3" did="2" type="WebView">
 <ppt>width=-1
 height=-1
-overScrollMode=never</ppt>
+overScrollMode=never
+visibility=gone</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">uycl(sss.defaultTheme,true)</eventItme><eventItme type="loadingComplete">gvs(3,wv)
+<View id="10" did="2" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+gravity=left|top
+background=</ppt>
+<event></event>
+</View>
+<View id="12" did="10" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">uycl(sss.defaultTheme,true)
+cls(sss.jbf,"com.wayww.edittextfirework.FireworkView",v)
+javanew(edit,v,"Context",activity)
+nvw(edit,12)
+gvs(11,eee)
+javax(null,edit,v,"bindEditText","android.widget.EditText",eee)</eventItme><eventItme type="loadingComplete">/.
+gvs(3,wv)
 hsas(wv,true)
 java(ws,wv,"android.webkit.WebView.getSettings")
 java(null,ws,"android.webkit.WebSettings.setBuiltInZoomControls","boolean",true)
 java(null,ws,"android.webkit.WebSettings.setDisplayZoomControls","boolean",false)
 us(3,"url","@text.html")
 hsas(3,true)
+./
 fn xui.动态提示(1,"@tip.xml","请点击写入数据写入文件数据")</eventItme></UIEventset>

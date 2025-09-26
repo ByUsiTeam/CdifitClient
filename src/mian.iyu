@@ -105,7 +105,10 @@ layout_marginLeft=6dp</ppt>
 loadjar("typeface.de",dex)
 cls(dex,"com.mus.alltypeface.set",class)
 fdir("@byusi/resources/ttf/acbt80.ttf",path)
-javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="loadingComplete">fn Lottie.loaddex()
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)
+loadjar("s41184.jar.i", sss.jbf)
+time(4,time)
+sss system_time =time</eventItme><eventItme type="loadingComplete">fn Lottie.loaddex()
 //
 fr("@byusi/resources/Lottie/loading.json",data)
 fn Lottie.setImageLottie(4,data,-1,true)

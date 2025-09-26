@@ -39,7 +39,7 @@ dha(dh2,false,true)
 dh(dh2,"duration",250)
 dhset(dhlist,false,dh,dh2)
 us(sidebar.1,"dh",dhlist)
-fn api.ban_scr()</eventItme></event>
+//fn api.ban_scr()</eventItme></event>
 </View>
 <View id="11" did="10" type="TextView">
 <ppt>width=-1
