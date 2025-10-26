@@ -2,15 +2,13 @@
 <ppt>width=-2
 height=-2
 url=$ByUsi/Cdifit/ggao.html</ppt>
-<event><eventItme type="shouldoverrideurlloading">f(st_url == "$ByUsi/Cdifit/ggao.html")
+<event><eventItme type="shouldoverrideurlloading">f(st_url ?* "file://")
 {
 	us(st_vId,"url","$ByUsi/Cdifit/ggao.html")
 }
 else
 {
-	endutw()
-	sss url =st_url
-	fn core.uigo("announcement_web.iyu")
+	hws(st_url)
 }</eventItme><eventItme type="onreceivederror">us(st_vId,"url",st_url)</eventItme></event>
 </View>
 <UIEventset></UIEventset>

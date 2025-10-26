@@ -149,13 +149,24 @@ t()
 	else
 	{
 		json(data,"get","msg",msg)
-		ufnsui()
-		{
-			fr("@byusi/resources/Lottie/error.json",data)
-			fn Lottie.setImageLottie(7,data,0,true)
-			us(8,"text","加载失败")
-			fn tw.tw2(msg,1)
-		}
+        f(msg == "Login required")
+        {
+        	ufnsui()
+        	{
+        		fn core.uigo("login.iyu")
+                fd("$System/Cookie.co",fdcookie)
+        	}
+        }
+        else
+        {
+        	ufnsui()
+        	{
+        		fr("@byusi/resources/Lottie/error.json",data)
+                fn Lottie.setImageLottie(7,data,0,true)
+                us(8,"text","加载失败")
+                fn tw.tw2(msg,1)
+        	}
+        }
 	}
 }
 
@@ -315,6 +326,76 @@ t()
 	sr(log_text,"/→/\n","",log_text)
 	sr(log_text,"@→@","\n\n",log_text)
 	fw(dir,log_text)
+}
+
+end fn
+
+fn share(page)
+
+us(7,"Refreshing","true")
+t()
+{
+	fr("$System/Cookie.co",cookie)
+	call(nr,"mjava","aes.decryptString",cookie,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+	hs("https://www.cdifit.cn/api/v3/share?page="+page+"&order_by=created_at&order=DESC",null,"utf-8",nr,url)
+    syso("分享调试数据印 → "+url)
+    fn core.logs("分享调试数据印 → "+url)
+	fw("$System/Cache/shareList.json",url)
+	fr("$System/Cache/shareList.json",data)
+	json(data,data)
+	json(data,"get","code",code)
+	f(code == 0 || code == "0")
+	{
+		json(data,"get","data",dataList)
+		json(dataList,"list","items",list)
+		json(list,"size",size)
+		s size_jsq =0
+		w(size &gt; size_jsq)
+		{
+			json(list,"data",size_jsq,item)
+			s(size_jsq + 1,size_jsq)
+            json(item,"get","key",key)
+            json(item,"get","is_dir",is_dir)
+            json(item,"get","password",password)
+            json(item,"get","create_date",create_date)
+            json(item,"get","downloads",downloads)
+            json(item,"get","views",views)
+            json(item,"get","expire",expire)
+            json(item,"get","source",source)
+            json(source,"get","name",name)
+            f(is_dir == true)
+            {
+            	s icon ="@byusi/resources/icon/folder.png"
+            }
+            else
+            {
+            	s icon ="@byusi/resources/icon/file-earmark.png"
+            }
+            sbp(icon,icon)
+            //加载数据到列表
+            //2025-10-14T15:37:50.752665826+08:00
+            sj(create_date,null,"T",time_1)
+            sj(create_date,"T",".",time_2)
+            sr(time_1,"-","/",time_3)
+            ss(time_3+" "+time_2,time)
+            //复文本信息
+            ss("浏览次数："+views+" 下载次数："+downloads,fwb)
+            ula(uilist,8=name,10=key,11=time,12=icon,13=password,14=fwb)
+		}
+        ufnsui()
+        {
+        	us(7,"Refreshing","false")
+        	uls(3,uilist,"slist.iyu",-2,-2)
+        }
+	}
+	else
+	{
+		json(data,"get","msg",msg)
+		ufnsui()
+		{
+			fn tw.tw2(msg,1)
+		}
+	}
 }
 
 end fn

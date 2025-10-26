@@ -91,10 +91,13 @@ ulag(st_vW,12,url2)
 slower(name,name2)
 f(type == "file")
 {
-	f(name2 *? ".png" || name2 *? ".jpg" || name2 *?".jpeg" || name2 *? ".webp")
+	f(name2 *? ".png" || name2 *? ".jpg" || name2 *?".jpeg" || name2 *? ".webp" || name2 *? ".gif")
 	{
-		utw(null,"","请求数据中...",true,v)
+		ufnsui()
 		{
+			utw(null,"","请求数据中...",true,v)
+			{
+			}
 		}
 		fr("@byusi/resources/template/json/picturePreview.json",data)
 		sr(data,"[SRC]",id,post_data)

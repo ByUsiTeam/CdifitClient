@@ -55,27 +55,4 @@ else
 	{
 		endutw()
 	}
-}</eventItme><eventItme type="loadingComplete">f(sss.url != null)
-{
-	f(sss.text == null)
-	{
-		sj(sss.url,"Cdifit:RootFile:/",null,url)
-		ss("https://www.cdifit.cn/home?path=/"+url,url)
-		us(3,"url",url)
-	}
-	else
-	{
-		sj(sss.url,"Cdifit:RootFile:/",null,url)
-		ss("https://www.cdifit.cn/text?p="+url+"&id="+sss.id,url)
-		us(3,"url",url)
-        sss text =null
-	}
-}
-else f(sss.nojx == "true" || sss.nojx == true)
-{
-	us(3,"url",sss.url)
-}
-else
-{
-	fn tw.tw2("错误，无URL参数传入",1)
-}</eventItme></UIEventset>
+}</eventItme><eventItme type="loadingComplete">us(3,"url",sss.url)</eventItme></UIEventset>

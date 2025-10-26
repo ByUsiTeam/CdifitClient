@@ -1,0 +1,109 @@
+<View id="1" did="0" type="CardView">
+<ppt>width=-1
+height=55dp
+app_CardcornerRadius=25dp
+layout_marginLeft=5dp
+layout_marginTop=4dp
+layout_marginBottom=2dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="12" did="3" type="ImageView">
+<ppt>width=45dp
+height=45dp
+src=17301567
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="5" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_marginLeft=3dp</ppt>
+<event></event>
+</View>
+<View id="8" did="5" type="TextView">
+<ppt>width=-1
+height=-2
+text=分享名称（ID：8）
+typeface=@byusi/resources/ttf/acbt80.ttf
+textSize=18sp
+textColor=#ff000000
+layout_marginTop=5dp
+singleLine=true
+ellipsize=end</ppt>
+<event></event>
+</View>
+<View id="9" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="11" did="9" type="TextView">
+<ppt>width=-2
+height=-2
+text=分享创建时间（ID：11）
+typeface=@byusi/resources/ttf/acbt80.ttf
+textColor=#ff000000
+textSize=12sp
+singleLine=true
+ellipsize=end</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="TextView">
+<ppt>width=-2
+height=-2
+text=
+textSize=0sp</ppt>
+<event></event>
+</View>
+<View id="13" did="9" type="TextView">
+<ppt>width=-2
+height=-2
+text=密码（ID：13）
+textSize=0sp</ppt>
+<event></event>
+</View>
+<View id="14" did="9" type="TextView">
+<ppt>width=-2
+height=-2
+text=复文本（ID：14）
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+textSize=10sp
+singleLine=true
+ellipsize=end</ppt>
+<event></event>
+</View>
+<View id="7" did="2" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">ulag(st_vW,10,key)
+ulag(st_vW,13,password)
+f(password != "" || password == null)
+{
+	ss("https://www.cdifit.cn/s/"+key+"?password="+password,url)
+}
+else
+{
+	ss("https://www.cdifit.cn/s/"+key,url)
+}
+sss url=url
+fn core.uigo("cdifitShare.iyu")</eventItme></event>
+</View>
+<UIEventset></UIEventset>

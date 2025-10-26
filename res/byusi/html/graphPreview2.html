@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>图片预览</title>
+    
+    <!-- Viewer.js CSS -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/viewerjs/1.10.5/viewer.min.css" rel="stylesheet">
+    
+    <!-- 引入阿里云CDN的Bootstrap -->
+    <link href="https://cdifit.cn/cdn/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            text-align: center;
+            margin: 2em;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f7f6;
+        }
+        h1 {
+            max-width: 90%;
+            margin: 0 auto;
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1em;
+        }
+        #image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 1em 0;
+        }
+        #image-preview {
+            max-width: 90%;
+            height: auto;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+        .download-button {
+            margin-top: 1em;
+        }
+        
+        h1, h2 {
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>图片预览</h1>
+    <div id="image-container">
+        <img id="image-preview" src="{{ filename }}" alt="{{ filename }}">
+        <p class="download-button"><a href="{{ filename }}" class="btn btn-primary" download>点击下载文件</a></p>
+    </div>
+
+    <!-- Viewer.js JS -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/viewerjs/1.10.5/viewer.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const image = document.getElementById('image-preview');
+            const viewer = new Viewer(image, {
+                navbar: false,
+                toolbar: {
+                    zoomIn: 1,
+                    zoomOut: 1,
+                    oneToOne: 1,
+                    reset: 1,
+                    prev: 0,
+                    play: {
+                        show: 0,
+                        size: 'large',
+                    },
+                    next: 0,
+                    rotateLeft: 1,
+                    rotateRight: 1,
+                    flipHorizontal: 1,
+                    flipVertical: 1,
+                },
+                viewed() {
+                    viewer.zoomTo(1);
+                },
+            });
+        });
+    </script>
+</body>
+</html>

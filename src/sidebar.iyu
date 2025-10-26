@@ -353,9 +353,56 @@ layout_marginLeft=6dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">ug(11,"text",path)
+<event><eventItme type="clicki">s path ="Cdifit:RootFile:/"
 sss url =path
 fn core.uigo("web_cdifit.iyu")</eventItme></event>
+</View>
+<View id="65" did="10" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginTop=6dp
+layout_marginLeft=6dp
+layout_marginRight=6dp
+layout_marginBottom=4dp
+app_CardcornerRadius=10dp
+app_CardElevation=6dp</ppt>
+<event></event>
+</View>
+<View id="66" did="65" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="67" did="66" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="68" did="67" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@byusi/resources/ApplicationUseIcon/ic_settings_more_connections.png
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="69" did="67" type="TextView">
+<ppt>width=-2
+height=-2
+text=分享
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="70" did="66" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn core.uigo("share.iyu")</eventItme></event>
 </View>
 <View id="59" did="10" type="CardView">
 <ppt>width=-1
