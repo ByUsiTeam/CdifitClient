@@ -454,13 +454,60 @@ background=through</ppt>
 fdir("$temp/Shared Code.PNG",a)
 call(null,"mjava","share.codeFile",a,activity)</eventItme></event>
 </View>
-<View id="11" did="10" type="CardView">
+<View id="71" did="10" type="CardView">
 <ppt>width=-1
 height=55dp
 layout_marginTop=6dp
 layout_marginLeft=6dp
 layout_marginRight=6dp
 layout_marginBottom=2dp
+app_CardcornerRadius=10dp
+app_CardElevation=6dp</ppt>
+<event></event>
+</View>
+<View id="72" did="71" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="73" did="72" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="74" did="73" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@byusi/resources/ApplicationUseIcon/ic_settings_system.png
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="75" did="73" type="TextView">
+<ppt>width=-2
+height=-2
+text=设置中心
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="76" did="72" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn core.uigo("settings.iyu")</eventItme></event>
+</View>
+<View id="11" did="10" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginTop=6dp
+layout_marginLeft=6dp
+layout_marginRight=6dp
+layout_marginBottom=8dp
 app_CardcornerRadius=10dp
 app_CardElevation=6dp</ppt>
 <event></event>

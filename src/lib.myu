@@ -1,0 +1,16 @@
+fn wp(id)
+
+fe("$System/Settings/backgrounds.sett",sett_sfcz)
+syso("壁纸存在状态："+sett_sfcz)
+fw("$temp/i.tzt","壁纸存在状态："+sett_sfcz)
+f(sett_sfcz == true)
+{
+	us(id,"visibility","visible")
+	us(id,"src","$System/Settings/backgrounds.sett")
+}
+else
+{
+	us(id,"visibility","gone")
+}
+
+end fn

@@ -2,22 +2,27 @@
 <title>CdifitClient</title>
 <icon>icon.png</icon>
 <packageName>miao.byusi.client.cdifit</packageName>
-<versionName>0.1.34</versionName>
-<versionint>40</versionint>
+<versionName>0.1.40</versionName>
+<versionint>60</versionint>
 <sdk>26</sdk>
 <yuv>3</yuv>
 
 <remark></remark>
-<Permissions>android.permission.FLASHLIGHT
-android.hardware.camera.autofocus
-android.hardware.camera2
-android.hardware.camera
-android.permission.REQUEST_INSTALL_PACKAGES
-android.permission.READ_EXTERNAL_STORAGE
-android.permission.VIBRATE
-android.permission.CAMERA
-android.permission.WRITE_EXTERNAL_STORAGE
+<Permissions>android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+android.permission.READ_PHONE_STATE
 android.permission.INTERNET
-android.permission.MOUNT_UNMOUNT_FILESYSTEMS</Permissions>
+android.permission.WRITE_EXTERNAL_STORAGE
+android.permission.CAMERA
+android.permission.VIBRATE
+android.permission.READ_EXTERNAL_STORAGE
+android.permission.RECORD_AUDIO
+android.permission.SYSTEM_ALERT_WINDOW
+android.permission.ACCESS_NETWORK_STATE
+android.permission.REQUEST_INSTALL_PACKAGES
+android.hardware.camera
+android.hardware.camera2
+android.hardware.camera.front
+android.hardware.camera.autofocus
+android.permission.FLASHLIGHT</Permissions>
 <createTime>2025-08-01 12:08:01</createTime>
-<upTime>2025-08-01 12:08:01</upTime><manifest></manifest><application></application>
+<upTime>2025-08-01 12:08:01</upTime><manifest><uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /></manifest><application></application>

@@ -1,0 +1,3 @@
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+fr("$temp/defaultTheme",defaultTheme)
+uycl(defaultTheme,true)</eventItme></UIEventset>

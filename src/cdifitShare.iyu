@@ -13,7 +13,14 @@ gravity=center</ppt>
 <View id="3" did="2" type="WebView">
 <ppt>width=-1
 height=-1</ppt>
-<event><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)</eventItme><eventItme type="onprogresschanged">f(st_nS != 100)
+<event><eventItme type="shouldoverrideurlloading">f(st_url ?* "http")
+{
+	us(st_vId,"url",st_url)
+}
+else
+{
+	hws(st_url)
+}</eventItme><eventItme type="onprogresschanged">f(st_nS != 100)
 {
 	us(5,"visibility","visible")
 	us(5,"progress",st_nS)

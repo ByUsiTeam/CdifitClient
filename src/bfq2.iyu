@@ -374,8 +374,8 @@ java(null,ws,"android.webkit.WebSettings.setDisplayZoomControls","boolean",false
 
 fn byusi.ztl()
 
-s color =sss.defaultTheme
-uycl(color,true)
+fr("$temp/defaultTheme",defaultTheme)
+uycl(defaultTheme,true)
 f(color=="#ffffff")
 {
 	s c="8192"
@@ -394,7 +394,8 @@ fuzs("@sdk/player.bysi.sdk","$",a)
 
 fn view.sdk()
 fn view.set(1)</eventItme><eventItme type="loadingComplete">hsas(1,true)
-s color =sss.defaultTheme
+fr("$temp/defaultTheme",defaultTheme)
+s color =defaultTheme
 gvs(26,id)
 java(color,null,"android.graphics.Color.parseColor","String",color)
 java(drawable,id,"android.widget.ProgressBar.getIndeterminateDrawable")

@@ -9,6 +9,6 @@ url=$ByUsi/Cdifit/ggao.html</ppt>
 else
 {
 	hws(st_url)
-}</eventItme><eventItme type="onreceivederror">us(st_vId,"url",st_url)</eventItme></event>
+}</eventItme><eventItme type="onreceivederror">us(st_vId,"url","$ByUsi/Cdifit/ggao.html")</eventItme></event>
 </View>
 <UIEventset></UIEventset>

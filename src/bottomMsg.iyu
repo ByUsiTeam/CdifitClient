@@ -1,0 +1,74 @@
+<View id="5" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+background=white</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=bottom|center</ppt>
+<event><eventItme type="clicki">us(bottomMsg.5,"visibility","gone")</eventItme></event>
+</View>
+<View id="1" did="6" type="CardView">
+<ppt>width=-1
+height=120dp
+layout_marginLeft=5dp
+layout_marginTop=5dp
+layout_marginRight=5dp
+layout_marginBottom=7dp
+app_CardcornerRadius=20dp</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="WebView">
+<ppt>width=-1
+height=-1
+url=$System/Html/bottomInformation.html</ppt>
+<event><eventItme type="onreceivederror">us(st_vId,"url","$System/Html/bottomInformation.html")</eventItme><eventItme type="shouldoverrideurlloading">f(st_url ?* "file://")
+{
+	us(st_vId,"url","$System/Html/bottomInformation.html")
+}
+else
+{
+	hws(st_url)
+}</eventItme></event>
+</View>
+<View id="7" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="TextView">
+<ppt>width=-2
+height=-2
+text=特别提醒
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+gravity=center
+textSize=25sp</ppt>
+<event></event>
+</View>
+<View id="9" did="7" type="TextView">
+<ppt>width=-2
+height=-2
+text=点击空白区域关闭该界面
+typeface=@byusi/resources/ttf/acbt80.ttf
+gravity=center
+textSize=8sp</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>

@@ -6,7 +6,14 @@ height=-1</ppt>
 <View id="2" did="1" type="WebView">
 <ppt>width=-1
 height=-1</ppt>
-<event><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)</eventItme><eventItme type="ondownloadstart">hws(st_url)</eventItme></event>
+<event><eventItme type="shouldoverrideurlloading">f(st_url ?* "http")
+{
+	us(st_vId,"url",st_url)
+}
+else
+{
+	hws(st_url)
+}</eventItme><eventItme type="ondownloadstart">hws(st_url)</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 fn Lottie.loaddex()

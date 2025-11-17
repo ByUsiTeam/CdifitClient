@@ -1,0 +1,30 @@
+import android.app.*;
+import android.os.*;
+import android.webkit.*;
+import java.util.*;
+import android.util.*;
+import android.widget.*;
+
+public WebView view;
+public String url = "https://www.cdifit.cn";
+
+public void init(WebView view)
+{
+  this.view = view;
+}
+
+public boolean set(String url,String data)
+{
+  CookieManager c = CookieManager.getInstance();
+  if(c==null) return false;
+  c.setAcceptCookie(true);
+  c.setCookie(url, data);
+  return true;
+}
+
+public String get(String url)
+{
+  CookieManager c = CookieManager.getInstance();
+  c.setAcceptCookie(true);
+  return c.getCookie(url);
+}

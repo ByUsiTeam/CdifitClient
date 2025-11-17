@@ -4,6 +4,14 @@ height=-1
 background=white</ppt>
 <event></event>
 </View>
+<View id="23" did="1" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
 <View id="2" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
@@ -39,7 +47,8 @@ dha(dh2,false,true)
 dh(dh2,"duration",250)
 dhset(dhlist,false,dh,dh2)
 us(sidebar.1,"dh",dhlist)
-//fn api.ban_scr()</eventItme></event>
+//fn api.ban_scr()
+fn core.condition()</eventItme></event>
 </View>
 <View id="14" did="10" type="ImageView">
 <ppt>width=48dp
@@ -86,7 +95,7 @@ ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
 us(st_vId,"refreshing","false")
 us(6,"background","through")
 us(8,"text","刷新中...")
-fn core.list("https://www.cdifit.cn/api/v3/directory/",ss.url2)</eventItme></event>
+fn core.list("https://www.cdifit.cn/api/v3/directory/",ss.url2,23)</eventItme></event>
 </View>
 <View id="4" did="5" type="RecyclerView">
 <ppt>width=-1
@@ -186,8 +195,14 @@ fn core.addv(1)
 fr("$temp/defaultTheme",defaultTheme)
 uycl(defaultTheme,true)
 //列表项加载
-fn core.list("https://www.cdifit.cn/api/v3/directory/",ss.url2)</eventItme><eventItme type="loadingComplete">addv(1,"music.iyu")
+fn core.list("https://www.cdifit.cn/api/v3/directory/",ss.url2,23)</eventItme><eventItme type="loadingComplete">addv(1,"music.iyu")
 us(music.14,"visibility","gone")
+s permissions ="android.permission.MANAGE_EXTERNAL_STORAGE"
+rps(permissions,qx)
+f(qx == false)
+{
+	rps(permissions)
+}
 //一言支持
 t()
 {
@@ -211,7 +226,11 @@ f(ggqr_1 != ggqr_2)
 		fw("$ByUsi/Cdifit/ggao.html.tmp",ggqr_1)
 		endutw()
 	}
-}</eventItme><eventItme type="downkey">f(st_kC == 4)
+}
+//其他界面添加显示
+addv(1,"bottomMsg.iyu")
+//配置应用
+fn core.condition()</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
 	utw(null,"","确定退出 CdifitClient 软件吗？","确定","取消",true,v)
 	{
@@ -221,4 +240,5 @@ f(ggqr_1 != ggqr_2)
 	{
 		endutw()
 	}
-}</eventItme></UIEventset>
+}</eventItme><eventItme type="restart">fn lib.wp(23)
+fn core.condition()</eventItme></UIEventset>
