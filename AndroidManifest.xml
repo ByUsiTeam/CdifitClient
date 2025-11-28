@@ -2,8 +2,8 @@
 <title>CdifitClient</title>
 <icon>icon.png</icon>
 <packageName>miao.byusi.client.cdifit</packageName>
-<versionName>0.1.40</versionName>
-<versionint>60</versionint>
+<versionName>0.4.2</versionName>
+<versionint>68</versionint>
 <sdk>26</sdk>
 <yuv>3</yuv>
 
@@ -25,4 +25,10 @@ android.hardware.camera.front
 android.hardware.camera.autofocus
 android.permission.FLASHLIGHT</Permissions>
 <createTime>2025-08-01 12:08:01</createTime>
-<upTime>2025-08-01 12:08:01</upTime><manifest><uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /></manifest><application></application>
+<upTime>2025-08-01 12:08:01</upTime><manifest>&lt;uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /&gt;</manifest><application>&lt;activity
+            android:name="cn.hugo.android.scanner.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden" &gt;
+        &lt;/activity&gt;</application>

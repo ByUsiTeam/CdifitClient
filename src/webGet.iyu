@@ -1,0 +1,73 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="WebView">
+<ppt>width=-1
+height=-1</ppt>
+<event><eventItme type="onprogresschanged">f(st_nS != 100)
+{
+	us(3,"visibility","visible")
+	us(4,"progress",st_nS)
+    us(5,"visibility","visible")
+}
+else
+{
+	us(3,"visibility","gone")
+    us(5,"visibility","gone")
+}</eventItme><eventItme type="ondownloadstart">hws(st_url)</eventItme><eventItme type="onreceivederror">utw(null,"","出错了"+st_eE,false,v)
+{
+	
+}</eventItme></event>
+</View>
+<View id="3" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="ProgressBar">
+<ppt>width=-1
+height=-2
+max=100
+progress=0</ppt>
+<event></event>
+</View>
+<View id="5" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="ProgressBar">
+<ppt>width=-1
+height=35dp
+layout_marginLeft=64dp
+layout_marginRight=64dp</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+fr("$temp/defaultTheme",defaultTheme)
+uycl(defaultTheme,true)
+fn core.loading(6)</eventItme><eventItme type="loadingComplete">us(2,"url",sss.url)</eventItme><eventItme type="downkey">f(st_kC == 4)
+{
+	ug(2,"cangoback",yzllq)
+    f(yzllq == true)
+    {
+    	us(2,"gobackorforward",-1)
+    }
+    else
+    {
+    	utw(null,"","确定退出吗？","确定","取消",true,v)
+    	{
+    		end()
+    	}
+        else
+        {
+        	endutw()
+        }
+    }
+}</eventItme></UIEventset>

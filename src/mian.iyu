@@ -1,87 +1,260 @@
 <View id="1" did="0" type="RelativeLayout">
 <ppt>width=-1
-height=-1
-background=black</ppt>
+height=-1</ppt>
 <event></event>
 </View>
-<View id="6" did="1" type="ImageView">
-<ppt>width=-1
-height=-1
-src=17301567
-scaleType=centercrop</ppt>
-<event></event>
-</View>
-<View id="2" did="1" type="CardView">
-<ppt>width=-1
-height=-1
-app_CardcornerRadius=25dp
-app_CardElevation=0</ppt>
-<event></event>
-</View>
-<View id="3" did="2" type="LinearLayout">
+<View id="2" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=vertical
-gravity=top|center
+gravity=center
 background=white</ppt>
 <event></event>
 </View>
-<View id="4" did="3" type="RoundImageView">
-<ppt>width=124dp
-height=124dp
-src=@byusi/logo/cdifit.png</ppt>
-<event></event>
-</View>
-<View id="5" did="3" type="TextView">
+<View id="3" did="2" type="RoundImageView">
 <ppt>width=-2
 height=-2
-text=CdifitClient
-typeface=@byusi/resources/ttf/001hh1.ttf
+src=@byusi/logo/cdifit.png
+ps=Logo</ppt>
+<event></event>
+</View>
+<View id="5" did="2" type="TextView">
+<ppt>width=-2
+height=-2
+text=开发测试版
+textColor=#ffff0000
+typeface=@byusi/resources/ttf/acbt80.ttf
+ps=开发测试标识
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="4" did="2" type="ImageView">
+<ppt>width=66dp
+height=66dp
+src=17301567
+ps=加载图标
+visibility=gone</ppt>
+<event><eventItme type="clicki">f(sss.cw == true)
+{
+	sss cw =false
+	fr("@byusi/resources/Lottie/loading.json",data)
+	//fn Lottie.setImageLottie(4,data,-1,true)
+	us(11,"visibility","visible")
+	us(4,"visibility","gone")
+	sss system_url ="https://www.cdifit.cn/"
+	t()
+	{
+		ss(sss.system_url+"api/v4/site/config/settings",url)
+		hs(url,json)
+		hs("https://api.www.cdifit.cn/cdifitclient/stop_server.txt",sts)
+		f(json != null)
+		{
+			json(json,json)
+			fw("$ByUsi/Config.json",json)
+			json(json,"get","data",data)
+			json(data,"get","default_theme",defaultTheme)
+			sss defaultTheme =defaultTheme
+			fw("$temp/defaultTheme",defaultTheme)
+			syso(sss.defaultTheme)
+			json(data,"get","site_notice",site_notice)
+			ss("&lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'&gt;"+site_notice,ggao)
+			fw("$ByUsi/Cdifit/ggao.html",ggao)
+			ufnsui()
+			{
+				uigo("home.iyu")
+				lan(0)
+				end()
+			}
+		}
+		else
+		{
+			json(sts,dsts)
+			syso(sts)
+			f(dsts != null && dsts != "")
+			{
+				json(dsts,"get","text",text)
+				ufnsui()
+				{
+					us(4,"visibility","visible")
+					fr("@byusi/resources/Lottie/error.json",data)
+					fn Lottie.setImageLottie(4,data,0,true)
+					us(11,"visibility","gone")
+					utw(null,"",text,"确定",true,v)
+					{
+						endutw()
+					}
+				}
+			}
+			else
+			{
+				ufnsui()
+				{
+					us(4,"visibility","visible")
+					us(11,"visibility","gone")
+					fr("@byusi/resources/Lottie/error.json",data)
+					fn Lottie.setImageLottie(4,data,0,true)
+					fn tw.tw2("错误，未链接网络，点击错误图标可再次刷新",1)
+					sss cw =true
+				}
+			}
+		}
+	fd("$Temp/shb.Sl.txt",yz)
+	}
+}</eventItme></event>
+</View>
+<View id="11" did="2" type="ProgressBar">
+<ppt>width=-1
+height=12dp
+layout_marginLeft=64dp
+layout_marginRight=64dp
+ps=加载动画应用区域</ppt>
+<event></event>
+</View>
+<View id="6" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=bottom</ppt>
+<event></event>
+</View>
+<View id="7" did="6" type="LinearLayout">
+<ppt>width=-1
+height=55dp
+orientation=horizontal
+gravity=center
+ps=ByUsi标识区域</ppt>
+<event></event>
+</View>
+<View id="9" did="7" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@byusi/logo/byusi.png</ppt>
+<event></event>
+</View>
+<View id="10" did="7" type="TextView">
+<ppt>width=-2
+height=-2
+text=ByUsi软件
 textColor=#ff000000
-textSize=28sp</ppt>
+typeface=@byusi/resources/ttf/001hh1.ttf
+layout_marginLeft=6dp</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
-call(null,"mjava","awzx.cover",activity,"白")
-fe("$System/Settings/backgrounds.sett",yzing)
-f(yzing == true)
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@byusi/resources/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)
+loadjar("s41184.jar.i", sss.jbf)
+time(4,time)
+sss system_time =time
+fn core.loading(11)
+fe("$temp/LoginVerification",yzscv)
+f(yzscv == false)
 {
-	us(6,"src","$System/Settings/backgrounds.sett")
+	fd("$System/Cookie.co",yz)
+    fw("$temp/LoginVerification","")
 }
-else
+loadjar("s41184.jar.i", sss.jbf)
+cls(sss.jbf,"com.wayww.edittextfirework.FireworkView",v)
+javanew(edit,v,"Context",activity)
+nvw(edit,1)</eventItme><eventItme type="loadingComplete">fn Lottie.loaddex()
+fr("@byusi/resources/Lottie/loading.json",data)
+//fn Lottie.setImageLottie(4,data,-1,true)
+fuzs("@VideoPlayer2.zip","$temp/VideoPlayer2",yz)
+sss system_url ="https://www.cdifit.cn/"
+t()
 {
-	us(6,"src","@byusi/resources/background/1750165764703.png")
-}</eventItme><eventItme type="loadingComplete">t()
-{
-	s a2 = 0
-	w(a2 &lt; 50)
+	ss(sss.system_url+"api/v4/site/config/settings",url)
+	hs(url,json)
+    fw("$temp.json",json)
+	hs("https://api.www.cdifit.cn/cdifitclient/bottomMsg.html",bottomMsg)
+	hs("https://api.www.cdifit.cn/cdifitclient/stop_server.txt",sts)
+	fw("$System/Html/bottomInformation.html",bottomMsg)
+	f(json != null)
 	{
-		s(a2 + 1,c2)
-		ss(c2+"dp",c2)
-		stop(10)
-		ufnsui()
+		json(json,json)
+		fw("$ByUsi/Config.json",json)
+		json(json,"get","data",data)
+		json(data,"get","default_theme",defaultTheme)
+		sss defaultTheme =defaultTheme
+		f(defaultTheme != null)
 		{
-			us(2,"app_cardcornerradius",c2)
-			s(a2 + 1, a2)
+			fw("$temp/defaultTheme",defaultTheme)
 		}
-		f(a2 == 50)
+		json(data,"get","site_notice",site_notice)
+		ss("&lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'&gt;"+site_notice,ggao)
+		fw("$ByUsi/Cdifit/ggao.html",ggao)
+		fe("$System/Cookie.co",yzsql)
+		java(当前包名,null,"android.app.ActivityThread.currentPackageName")
+		syso(当前包名)
+		java(安卓级别,null,"android.os.SystemProperties.getInt","String","ro.build.version.sdk","int",-1)
+		syso(安卓级别)
+		f(安卓级别 &gt;= 28)
 		{
-			stop(3000)
+			fdir("$",dir)
+			fuz("@byusi/resources/sdk/classes.jar.i","libsulefi.so",dir+"/"+当前包名+"/sulefi_armeabi",null)
+			java(null,null,"java.lang.System.load","String",dir+"/"+当前包名+"/sulefi_armeabi/libsulefi.so")
+			f(yzsql == true)
+			{
+				ufnsui()
+				{
+					fn core.uigo("home.iyu")
+					end()
+				}
+			}
+			else
+			{
+				ufnsui()
+				{
+					fn core.uigo("login.iyu")
+					end()
+				}
+			}
+		}
+		else
+		{
 			ufnsui()
 			{
-				fn core.uigo("mian2.iyu")
+				fn tw.tw2("安卓版本不适配，抱歉了",1)
 				end()
 			}
 		}
 	}
+	else
+	{
+		json(sts,dsts)
+		syso(sts)
+		f(dsts != null && dsts != "")
+		{
+			json(dsts,"get","text",text)
+			ufnsui()
+			{
+				us(4,"visibility","visible")
+				us(11,"visibility","gone")
+				fr("@byusi/resources/Lottie/error.json",data)
+				fn Lottie.setImageLottie(4,data,0,true)
+				utw(null,"",text,"确定",true,v)
+				{
+					endutw()
+				}
+			}
+		}
+		else
+		{
+			ufnsui()
+			{
+				us(4,"visibility","visible")
+				us(11,"visibility","gone")
+				fr("@byusi/resources/Lottie/error.json",data)
+				fn Lottie.setImageLottie(4,data,0,true)
+				fn tw.tw2("错误，未链接网络，点击错误图标可再次刷新",1)
+				sss cw =true
+			}
+		}
+	}
 }
-gvs(1,控件)
-javanew(at,"android.transition.AutoTransition")
-javanew(tm,"android.transition.TransitionManager")
-java(null,tm,"android.transition.TransitionManager.beginDelayedTransition","android.view.ViewGroup",控件,"android.transition.Transition",at)
-//dhas(dh, 2, "translationY", 0,500,750,875,937,968,983,990,993,994,995)
-dhas(dh, 2, "translationY", 0,800,1200,1400,1500,1550,1570,1580,1585,1587,1588,1589,1590)
-dh(dh, "duration", 1200)
-dh(dh, "start")
-fe("$System/Settings/backgrounds.sett",background_sfcz)
-sss background_sfcz =background_sfcz</eventItme></UIEventset>
+fd("$Temp/shb.Sl.txt",yz)</eventItme><eventItme type="downkey">f(st_kC == 4)
+{
+	
+}</eventItme></UIEventset>

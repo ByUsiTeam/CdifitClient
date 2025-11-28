@@ -59,8 +59,7 @@ height=55dp
 app_CardcornerRadius=15dp
 app_CardcornerRadius=14dp
 layout_marginLeft=8dp
-layout_marginRight=8dp
-visibility=gone</ppt>
+layout_marginRight=8dp</ppt>
 <event></event>
 </View>
 <View id="13" did="12" type="TextInputLayout">
@@ -88,8 +87,7 @@ app_CardcornerRadius=15dp
 app_CardcornerRadius=14dp
 layout_marginLeft=8dp
 layout_marginRight=8dp
-layout_marginTop=12dp
-visibility=gone</ppt>
+layout_marginTop=12dp</ppt>
 <event></event>
 </View>
 <View id="16" did="15" type="TextInputLayout">
@@ -117,7 +115,8 @@ app_CardcornerRadius=15dp
 app_CardcornerRadius=14dp
 layout_marginLeft=8dp
 layout_marginRight=8dp
-layout_marginTop=12dp</ppt>
+layout_marginTop=12dp
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="33" did="32" type="TextInputLayout">
@@ -145,8 +144,7 @@ app_CardcornerRadius=15dp
 app_CardcornerRadius=14dp
 layout_marginLeft=8dp
 layout_marginRight=8dp
-layout_marginTop=12dp
-visibility=gone</ppt>
+layout_marginTop=12dp</ppt>
 <event></event>
 </View>
 <View id="24" did="21" type="LinearLayout">
@@ -195,18 +193,23 @@ text=
 background=through</ppt>
 <event><eventItme type="clicki">t()
 {
-	hs("https://www.cdifit.cn/api/v3/site/captcha",json)
+	hs("https://www.cdifit.cn/api/v4/site/captcha",json)
 	json(json,json)
 	json(json,"get","code",code)
 	f(code == 0)
 	{
 		json(json,"get","data",data)
+        json(data,"get","image",image)
+        json(data,"get","ticket",verification_ticket)
+        fw("$temp/verificationTicket",verification_ticket)
+        ss("{\"image_data\": \""+image+"\"}",data)
+        hs("https://api.www.cdifit.cn/picture/bn/",data,"utf-8",imgUrl)
+        json(imgUrl,imgUrlJson)
+        json(imgUrlJson,"get","image_url",image_url)
+        syso(imgUrl)
 		ufnsui()
 		{
-			fr("@byusi/html/captcha.html",cca)
-			sr(cca,"[IMG]",data,cca)
-			fw("$temp/cca.html",cca)
-			us(27,"url","$temp/cca.html")
+			us(27,"url",image_url)
 		}
 	}
 	else
@@ -231,7 +234,8 @@ layout_marginTop=12dp</ppt>
 height=45dp
 layout_marginLeft=18dp
 layout_marginRight=18dp
-app_CardcornerRadius=25dp</ppt>
+app_CardcornerRadius=25dp
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="20" did="19" type="Button">
@@ -257,6 +261,55 @@ else
 	fn tw.tw2("请输入Cookie",1)
 }</eventItme></event>
 </View>
+<View id="37" did="18" type="CardView">
+<ppt>width=-1
+height=45dp
+layout_marginLeft=18dp
+layout_marginRight=18dp
+app_CardcornerRadius=25dp</ppt>
+<event></event>
+</View>
+<View id="38" did="37" type="Button">
+<ppt>width=-1
+height=-1
+text=登录
+typeface=@byusi/resources/ttf/acbt80.ttf
+textColor=#ffffffff
+gravity=center</ppt>
+<event><eventItme type="clicki">ug(14,"text",email)
+ug(17,"text",password)
+ug(23,"text",verification)
+fr("$temp/verificationTicket",ticket)
+t()
+{
+	ss("{\"captcha\":\""+verification+"\",\"ticket\":\""+ticket+"\",\"email\":\""+email+"\",\"password\":\""+password+"\"}",data)
+	hs("https://www.cdifit.cn/api/v4/session/token",data,"utf-8",fanh)
+    json(fanh,data)
+    json(data,"get","code",code)
+    f(code == "0")
+    {
+    	json(data,"get","data",data2)
+        json(data2,"get","user",user)
+        json(user,"get","nickname",nickname)
+        ss("欢迎回来 "+nickname,tsc)
+        ufnsui()
+        {
+        	fn tw.tw(tsc)
+            fw("$System/UserData.json",data)
+            fn core.uigo("home.iyu")
+            end()
+        }
+    }
+    else
+    {
+    	json(data,"get","msg",msg)
+        ufnsui()
+        {
+        	fn tw.tw2(msg,1)
+        }
+    }
+}</eventItme></event>
+</View>
 <View id="31" did="18" type="TextView">
 <ppt>width=-2
 height=-2
@@ -265,7 +318,8 @@ textColor=#ff419aff
 typeface=@byusi/resources/ttf/acbt80.ttf
 gravity=center
 textSize=15sp
-layout_marginTop=10dp</ppt>
+layout_marginTop=10dp
+visibility=gone</ppt>
 <event><eventItme type="clicki">uqr()</eventItme></event>
 </View>
 <View id="36" did="18" type="TextView">
@@ -276,7 +330,9 @@ textColor=#ff419aff
 typeface=@byusi/resources/ttf/acbt80.ttf
 gravity=center
 textSize=15sp
-layout_marginTop=10dp</ppt>
+layout_marginTop=10dp
+ps=网页 Cdifit
+visibility=gone</ppt>
 <event><eventItme type="clicki">hws("https://www.cdifit.cn")</eventItme></event>
 </View>
 <View id="35" did="18" type="TextView">
@@ -287,7 +343,8 @@ textColor=#ff419aff
 typeface=@byusi/resources/ttf/acbt80.ttf
 gravity=center
 textSize=15sp
-layout_marginTop=10dp</ppt>
+layout_marginTop=10dp
+visibility=gone</ppt>
 <event><eventItme type="clicki">hws("https://viayoo.com/zh-cn/")</eventItme></event>
 </View>
 <View id="29" did="3" type="LinearLayout">
@@ -305,22 +362,29 @@ src=17301567</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
-uycl(sss.defaultTheme,true)
+fr("$temp/defaultTheme",defaultTheme)
+sss defaultTheme =defaultTheme
+uycl(defaultTheme,true)
 //--====隔离线====--
 t()
 {
-	hs("https://www.cdifit.cn/api/v3/site/captcha",json)
+	hs("https://www.cdifit.cn/api/v4/site/captcha",json)
 	json(json,json)
 	json(json,"get","code",code)
 	f(code == 0)
 	{
 		json(json,"get","data",data)
+        json(data,"get","image",image)
+        json(data,"get","ticket",verification_ticket)
+        fw("$temp/verificationTicket",verification_ticket)
+        ss("{\"image_data\": \""+image+"\"}",data)
+        hs("https://api.www.cdifit.cn/picture/bn/",data,"utf-8",imgUrl)
+        json(imgUrl,imgUrlJson)
+        json(imgUrlJson,"get","image_url",image_url)
+        syso(imgUrl)
 		ufnsui()
 		{
-			fr("@byusi/html/captcha.html",cca)
-			sr(cca,"[IMG]",data,cca)
-			fw("$temp/cca.html",cca)
-			us(27,"url","$temp/cca.html")
+			us(27,"url",image_url)
 		}
 	}
 	else
@@ -333,7 +397,10 @@ t()
 }</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
 	
-}</eventItme><eventItme type="loadingComplete">us(20,"background",sss.defaultTheme)</eventItme><eventItme type="onactivityresult">f(st_sC == 1102)
+}</eventItme><eventItme type="loadingComplete">us(20,"background",sss.defaultTheme)
+us(38,"background",sss.defaultTheme)
+fn core.uigo("home.iyu")
+end()</eventItme><eventItme type="onactivityresult">f(st_sC == 1102)
 {
 	git(st_iT,"extra","result",1_c)
 	f(1_c != null)

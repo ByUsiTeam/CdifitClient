@@ -10,21 +10,21 @@ public String url = "https://www.cdifit.cn";
 
 public void init(WebView view)
 {
-  this.view = view;
+	this.view = view;
 }
 
 public boolean set(String url,String data)
 {
-  CookieManager c = CookieManager.getInstance();
-  if(c==null) return false;
-  c.setAcceptCookie(true);
-  c.setCookie(url, data);
-  return true;
+	CookieManager c = CookieManager.getInstance();
+	if(c==null) return false;
+	c.setAcceptCookie(true);
+	c.setCookie(url, data);
+	return true;
 }
 
 public String get(String url)
 {
-  CookieManager c = CookieManager.getInstance();
-  c.setAcceptCookie(true);
-  return c.getCookie(url);
+	CookieManager c = CookieManager.getInstance();
+	c.setAcceptCookie(true);
+	return c.getCookie(url);
 }

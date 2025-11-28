@@ -1,0 +1,19 @@
+import android.app.Activity;
+import android.content.Intent;
+import android.app.KeyguardManager;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import android.os.Build;
+import android.os.Bundle;
+
+public showScreenLockPwd(activity) {
+	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+		mKeyguardMgr = (KeyguardManager) activity.getSystemService(activity.KEYGUARD_SERVICE);
+		Intent intent = mKeyguardMgr.createConfirmDeviceCredentialIntent(null, null);
+		return intent;
+	}
+	else
+	{
+		tw("你的系统不支持");
+	}
+}

@@ -1,0 +1,21 @@
+<resources>
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">#ff3e7bff</item>
+        <item name="colorPrimaryDark">#ff000000</item>
+        <item name="colorAccent">#ff3e7bff</item>
+        <item name="android:statusBarColor">#ff000000</item>
+        <item name="android:navigationBarColor">#ff000000</item>
+        <item name="colorControlNormal">#ff3e7bff</item>
+        <item name="colorControlHighlight">#ffffffff</item>
+        <item name="colorControlActivated">#ffffffff</item>
+        <item name="colorButtonNormal">#ffffffff</item>
+        <item name="android:colorForeground">#ffffffff</item>
+        <item name="android:colorBackground">#ffffffff</item>
+        <item name="android:windowBackground">#ffffffff</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textColorPrimaryDisableOnly">#ffffffff</item>
+        <item name="android:textColorPrimary">#ffffffff</item>
+    </style>
+</resources>

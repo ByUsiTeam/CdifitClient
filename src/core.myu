@@ -9,7 +9,7 @@ t()
 {
 	f(sss.debug == true)
 	{
-		s cookie_data ="cloudreve-session=MTc1NDM5NzA1NnxOd3dBTkVoTlRUTldORVZGV0VaTFVVcFRTakpPVEVFMlJsVlhUVTgwTmtNeVF6VldUVnBZVlZCT1VsbERSMWhZVmxGQlJVdE9SRkU9fEzfWBOqxt8MyM2DvRBSgWWRnR9_SiR7a2ixwAFweDES"
+		s cookie_data =null
 		hs(hurl,null,"utf-8",cookie_data,true,data)
 		fw("$System/homeList.json",data)
 	}
@@ -324,6 +324,7 @@ end fn
 
 fn logs(text)
 
+syso(text)
 ss("$Logs/"+sss.system_time+".log.byusi.txt",dir)
 time(1,time)
 t()

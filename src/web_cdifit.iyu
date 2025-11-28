@@ -53,6 +53,7 @@ uycl(defaultTheme,true)
 fr("$System/Cookie.co",yssj)
 call(cookie,"mjava","aes.decryptString",yssj,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
 //输入要自定义的cookie
+s url ="https://www.cdifit.cn"
 call(ret,"mjava","cookie.set",url,cookie)
 call(ret,"mjava","cookie.get",url)</eventItme><eventItme type="downkey">ug(3,"cangoback",fhy)
 f(fhy == true)
@@ -63,13 +64,15 @@ else
 {
 	utw(null,"","已经无法返回了，是否退出该界面？","是","否",false,v)
 	{
+		sss sbhzt =true
 		end()
 	}
 	else
 	{
 		endutw()
 	}
-}</eventItme><eventItme type="loadingComplete">f(sss.url != null)
+}</eventItme><eventItme type="loadingComplete">fn lib.font(3)
+f(sss.url != null)
 {
 	f(sss.text == null)
 	{
@@ -82,7 +85,7 @@ else
 		sj(sss.url,"Cdifit:RootFile:/",null,url)
 		ss("https://www.cdifit.cn/text?p="+url+"&id="+sss.id,url)
 		us(3,"url",url)
-        sss text =null
+		sss text =null
 	}
 }
 else f(sss.nojx == "true" || sss.nojx == true)

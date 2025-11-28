@@ -14,3 +14,53 @@ else
 }
 
 end fn
+
+fn keepAlive()
+
+/.
+s sc =1
+t()
+{
+	s(sc * "60",sj)
+	s(sj * "1000",schang)
+	stop(schang)
+	f(sss.sbhzt != true)
+	{
+		time(0,time)
+		ss("[ "+time+" ] 保活状态 → 保活中\n计时时长 → "+schang,bhztlog)
+		syso(bhztlog)
+		fn core.logs(bhztlog)
+		fn lib.keepAlive()
+	}
+	else
+	{
+		time(0,time)
+		ss("[ "+time+" ] 保活状态 → 停止保活",bhztlog)
+		fn core.logs(bhztlog)
+		sss sbhzt =null
+	}
+}
+./
+syso("并没有确定保活功能开发完成")
+
+end fn
+
+fn font(id)
+
+s font ="@byusi/resources/ttf/acbt80.ttf"
+hsas(id,true)
+s sele =font
+fdir(sele,sele)
+otob("file",null,sele,a)
+java(n,null,"android.util.Base64.encode","byte[]",a,"int",0)
+btoo(n,"$diy/zit")
+fr("$diy/zit",o)
+sr(o,"\n","",o)
+fw("$diy/zit",o)
+sss zit=o
+
+
+ug(id,"url",a)
+us(id,"url",a)
+
+end fn

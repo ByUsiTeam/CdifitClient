@@ -186,7 +186,7 @@ visibility=gone</ppt>
 <UIEventset><eventItme type="loading">sss debug =false
 //sss is_cookies =0
 //
-ss url2 ="https://www.cdifit.cn/api/v3/directory/"
+ss url2 ="https://www.cdifit.cn/api/v4/file/"
 //
 fn byusi.ztl()
 fn Lottie.loaddex()
@@ -195,7 +195,7 @@ fn core.addv(1)
 fr("$temp/defaultTheme",defaultTheme)
 uycl(defaultTheme,true)
 //列表项加载
-fn core.list("https://www.cdifit.cn/api/v3/directory/",ss.url2,23)</eventItme><eventItme type="loadingComplete">addv(1,"music.iyu")
+fn core.list("https://www.cdifit.cn/api/v4/file/",ss.url2,23)</eventItme><eventItme type="loadingComplete">addv(1,"music.iyu")
 us(music.14,"visibility","gone")
 s permissions ="android.permission.MANAGE_EXTERNAL_STORAGE"
 rps(permissions,qx)
@@ -230,7 +230,20 @@ f(ggqr_1 != ggqr_2)
 //其他界面添加显示
 addv(1,"bottomMsg.iyu")
 //配置应用
-fn core.condition()</eventItme><eventItme type="downkey">f(st_kC == 4)
+fn core.condition()
+//安全验证
+fr("$System/Settings/verification.sett",vfiin)
+f(vfiin == "true")
+{
+	call(intent,"mjava","verification.showScreenLockPwd",activity)
+	uit(intent, "result", 7720)
+}
+else
+{
+	sss url ="https://www.cdifit.cn"
+    fn core.uigo("webGet.iyu")
+    end()
+}</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
 	utw(null,"","确定退出 CdifitClient 软件吗？","确定","取消",true,v)
 	{
@@ -241,4 +254,18 @@ fn core.condition()</eventItme><eventItme type="downkey">f(st_kC == 4)
 		endutw()
 	}
 }</eventItme><eventItme type="restart">fn lib.wp(23)
-fn core.condition()</eventItme></UIEventset>
+fn core.condition()</eventItme><eventItme type="onactivityresult">f(st_sC==7720)
+{
+	f(st_lC==0)
+	{
+		fn tw.tw2("验证失败")
+		end()
+	}
+	else f(st_lC==-1)
+	{
+		fn tw.tw("验证成功")
+        sss url ="https://www.cdifit.cn"
+        fn core.uigo("webGet.iyu")
+        end()
+	}
+}</eventItme></UIEventset>

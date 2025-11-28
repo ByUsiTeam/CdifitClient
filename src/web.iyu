@@ -17,4 +17,5 @@ else
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 fn Lottie.loaddex()
-uycl(sss.defaultTheme,true)</eventItme><eventItme type="loadingComplete">us(2,"url",sss.url)</eventItme></UIEventset>
+uycl(sss.defaultTheme,true)</eventItme><eventItme type="loadingComplete">us(2,"url",sss.url)
+fn lib.font(2)</eventItme></UIEventset>

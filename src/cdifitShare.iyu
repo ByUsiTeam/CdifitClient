@@ -47,7 +47,9 @@ visibility=gone</ppt>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 fr("$temp/defaultTheme",defaultTheme)
-uycl(defaultTheme,true)</eventItme><eventItme type="downkey">ug(3,"cangoback",fhy)
+uycl(defaultTheme,true)</eventItme><eventItme type="downkey">f(st_kC == 4)
+{
+ug(3,"cangoback",fhy)
 f(fhy == true)
 {
 	us(3,"gobackorforward",-1)
@@ -56,10 +58,13 @@ else
 {
 	utw(null,"","已经无法返回了，是否退出该界面？","是","否",false,v)
 	{
+		sss sbhzt =true
 		end()
 	}
 	else
 	{
 		endutw()
 	}
-}</eventItme><eventItme type="loadingComplete">us(3,"url",sss.url)</eventItme></UIEventset>
+}
+}</eventItme><eventItme type="loadingComplete">us(3,"url",sss.url)
+fn lib.font(3)</eventItme></UIEventset>

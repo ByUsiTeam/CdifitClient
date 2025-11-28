@@ -126,12 +126,12 @@ background=through</ppt>
 f(ckd == false)
 {
 	us(17,"checked",true)
-    fw("$System/Settings/cookie.sett","true")
+	fw("$System/Settings/cookie.sett","true")
 }
 else f(ckd == true)
 {
 	us(17,"checked",false)
-    fw("$System/Settings/cookie.sett","false")
+	fw("$System/Settings/cookie.sett","false")
 }</eventItme></event>
 </View>
 <View id="19" did="2" type="CardView">
@@ -198,12 +198,84 @@ background=through</ppt>
 f(ckd == false)
 {
 	us(25,"checked",true)
-    fw("$System/Settings/ad.sett","true")
+	fw("$System/Settings/ad.sett","true")
 }
 else f(ckd == true)
 {
 	us(25,"checked",false)
-    fw("$System/Settings/ad.sett","false")
+	fw("$System/Settings/ad.sett","false")
+}</eventItme></event>
+</View>
+<View id="36" did="2" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginLeft=8dp
+layout_marginTop=5dp
+layout_marginRight=8dp
+layout_marginBottom=4dp
+app_CardcornerRadius=25dp</ppt>
+<event></event>
+</View>
+<View id="37" did="36" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="38" did="37" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="39" did="38" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@byusi/resources/ApplicationUseIcon/ic_settings_privacy.png
+layout_marginLeft=8dp</ppt>
+<event></event>
+</View>
+<View id="40" did="38" type="TextView">
+<ppt>width=-2
+height=-2
+text=安全验证
+textColor=#ff000000
+typeface=@byusi/resources/ttf/acbt80.ttf
+layout_marginLeft=4dp
+singleLine=true
+scrollHorizontally=true
+textSize=15sp</ppt>
+<event></event>
+</View>
+<View id="41" did="38" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="42" did="41" type="RadioButton">
+<ppt>width=-2
+height=-2
+text=
+layout_marginRight=10dp</ppt>
+<event></event>
+</View>
+<View id="43" did="37" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">ug(42,"checked",ckd)
+f(ckd == false)
+{
+	us(42,"checked",true)
+	fw("$System/Settings/verification.sett","true")
+}
+else f(ckd == true)
+{
+	us(42,"checked",false)
+	fw("$System/Settings/verification.sett","false")
 }</eventItme></event>
 </View>
 <View id="27" did="2" type="CardView">
@@ -271,19 +343,19 @@ background=through</ppt>
 <event><eventItme type="clicki">call(null,"mlua","lib.getSrc")</eventItme><eventItme type="press">utw(null,"","确定删除背景图吗？","确定","取消",false,v)
 {
 	fd("$System/Settings/backgrounds.sett",yz)
-    f(yz == true)
-    {
-    	fn tw.tw("删除成功")
-        fn lib.wp(35)
-        utw(null,"","删除背景图完成，返回主页后请手动刷新一下",false,v)
-        {
-        }
-    }
-    else
-    {
-    	fn tw.tw2("删除失败了",1)
-        fn lib.wp(35)
-    }
+	f(yz == true)
+	{
+		fn tw.tw("删除成功")
+		fn lib.wp(35)
+		utw(null,"","删除背景图完成，返回主页后请手动刷新一下",false,v)
+		{
+		}
+	}
+	else
+	{
+		fn tw.tw2("删除失败了",1)
+		fn lib.wp(35)
+	}
 }
 else
 {
@@ -305,47 +377,56 @@ f(asett == false)
 {
 	fw("$System/Settings/ad.sett","true")
 }
+//设置安全
+fe("$System/Settings/verification.sett",vifiin)
+f(vifiin == false)
+{
+	fw("$System/Settings/verification.sett","false")
+}
 //简称配置并设置到控件中
 fr("$System/Settings/cookie.sett",csett_t)
 us(17,"checked",csett_t)
 //广告
 fr("$System/Settings/ad.sett",asett_t)
-us(25,"checked",asett_t)</eventItme><eventItme type="onactivityresult">javags(io,activity,"android.app.Activity","RESULT_OK")
+us(25,"checked",asett_t)
+//安全设置
+fr("$System/Settings/verification.sett",vsett)
+us(42,"checked",vsett)</eventItme><eventItme type="onactivityresult">javags(io,activity,"android.app.Activity","RESULT_OK")
 f(st_lC==io)
 {
 	f(st_sC==2)
-    {
-    	java(uri,st_iT,"android.content.Intent.getData")
-        call(path,"mlua","lib.getPath",uri)
-        ufnsui()
-        {
-        	fdir(sd)
-            ss(sd+"/",sd)
-            sr(path,sd,"%",ss.path)
-            utw(null,"","确定选择："+ss.path+" 为背景图片吗？","确定","取消",false,v)
-            {
-            	fe("$System/Settings/backgrounds.sett",yuancz)
-            	fc(ss.path,"$System/Settings/backgrounds.sett",true,yz)
-                f(yz == true)
-                {
-                	fn tw.tw("导入壁纸成功")
-                    fn lib.wp(35)
-                    f(yuancz == false)
-                    {
-                    	utw(null,"","设置背景图完成，返回主页后请手动刷新一下",false,v)
-                        {
-                        }
-                    }
-                }
-                else
-                {
-                	fn tw.tw2("导入壁纸失败，出错了",1)
-                }
-            }
-            else
-            {
-            	endutw()
-            }
-        }
-    }
+	{
+		java(uri,st_iT,"android.content.Intent.getData")
+		call(path,"mlua","lib.getPath",uri)
+		ufnsui()
+		{
+			fdir(sd)
+			ss(sd+"/",sd)
+			sr(path,sd,"%",ss.path)
+			utw(null,"","确定选择："+ss.path+" 为背景图片吗？","确定","取消",false,v)
+			{
+				fe("$System/Settings/backgrounds.sett",yuancz)
+				fc(ss.path,"$System/Settings/backgrounds.sett",true,yz)
+				f(yz == true)
+				{
+					fn tw.tw("导入壁纸成功")
+					fn lib.wp(35)
+					f(yuancz == false)
+					{
+						utw(null,"","设置背景图完成，返回主页后请手动刷新一下",false,v)
+						{
+						}
+					}
+				}
+				else
+				{
+					fn tw.tw2("导入壁纸失败，出错了",1)
+				}
+			}
+			else
+			{
+				endutw()
+			}
+		}
+	}
 }</eventItme></UIEventset>
